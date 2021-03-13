@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expenses in submarino</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet" />
+    <link rel="icon"
+        href="https://images-submarino.b2w.io/zion/manifest/icons/940dfc865ba64096399fcb71d51d6d9f.favicon.ico">
+</head>
+
+<body>
+    <header>
+        <img src="https://play-lh.googleusercontent.com/29dRafseDDukId_o-0nnghHhwJy8aOdIwaS4U2_BWHFecl9WcDL1BPKDf3WevdSZxLo" alt="Logo">
+        <svg class="brandIcon" viewBox="0 0 24.58 13.06" style="opacity: 0; visibility: hidden;">
+            <path
+                d="M21.36,6.61H17.41V5.53a1.68,1.68,0,0,0-1.72-1.7H14.1V2.17c0-.51.09-.56.81-.56a.82.82,0,0,0,.81-.8A.81.81,0,0,0,15,0H13.3a.81.81,0,0,0-.81.81v3H10.83a1.65,1.65,0,0,0-1.7,1.7V6.61H5.24A3.23,3.23,0,0,0,2.13,9H1.61V8.23A.81.81,0,0,0,0,8.23v3.23a.81.81,0,0,0,1.61,0v-.81h.53a3.22,3.22,0,0,0,3.1,2.41H21.36a3.23,3.23,0,0,0,0-6.45Z">
+            </path>
+        </svg>
+    </header>
+    <main>
+        <h1>Calculate your expenses with us!</h1>
+        <section>
+            <div class="addContainer">
+                <a href="#" onclick="overlay.open()">Add a product!</a>
+            </div>
+            <div class="addButton">
+                <a href="#" onclick="overlay.open()">
+                    <img src="./assets/plusButton.svg" alt="Add!" />
+                </a>
+            </div>
+        </section>
+        <section class="removeOn" style="opacity: 0; visibility: hidden;">
+            <div class="removeMensage">
+                <span>Delete all!</span>
+            </div>
+            <div class="removeButton">
+                <a href="" onclick="table.deleteAll()">
+                    <img src="./assets/removeButton.svg" alt="Delete!" />
+                </a>
+            </div>
+        </section>
+        <section class="sectionTable" style="opacity: 0; visibility: hidden;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor Gasto</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <p class="countingProducts">0 produtos</p>
+            <p class="total">Total: R$0,00</p>
+        </div>
+    </footer>
+
+    <div class="overlay" hidden>
+        <div>
+            <form action="" onsubmit="form.submit(event)">
+                <div>
+                    <h2>How many products?</h2>
+                    <label for="productsQuantity"></label>
+                    <input type="number" id="productsQuantity" min="1" onfocus="focusEvent()" placeholder="Type here!">
+                </div>
+                <div>
+                    <h2>What product do you want?</h2>
+                    <label for="products"></label>
+                    <select name="products" id="products" onfocus="focusEvent()">
+                        <option value="" disabled selected hidden>Select here!</option>
+                        <option value="87.3">CyberPunk 2077-PS4</option>
+                        <option value="439.99">Fritadeira Sem Óleo Oster</option>
+                        <option value="4699.99">Lenovo Ideapad L340</option>
+                        <option value="239.99">Liquidificador Philips</option>
+                        <option value="598.5">Micro-ondas Consul</option>
+                        <option value="1265.25">Monitor LED 25'' Gamer LG</option>
+                        <option value="1151.1">Moto G9 Play </option>
+                        <option value="10377.93">Smart TV OLED 65'' LG</option>
+                        <option value="264.48">SSD 240gb Plus - Sandisk</option>
+                        <option value="3403.08">Xbox Series S</option>
+                    </select>
+                </div>
+                <div class="calculation">
+                    <p class="quantity">0 Units</p>
+                    <p class="cost">Cost: R$ 0,00</p>
+                </div>
+                <div class="actions">
+                    <a href="#" onclick="overlay.close()">Leave</a>
+                    <button>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
