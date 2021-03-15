@@ -42,6 +42,29 @@ header img {
     height: 3.6rem;
 }
 
+.gitHub {
+    position: fixed;
+    top: .2rem;
+    right: .2rem;
+}
+
+.gitHub svg {
+    transition: .6s;
+    -webkit-transition: .6s;
+    -moz-transition: .6s;
+    -ms-transition: .6s;
+    -o-transition: .6s;
+}
+
+.gitHub svg:hover {
+    box-shadow: 4px -3px .5rem 2px #000000;
+    transform: translate(-8px, 6px);
+    -webkit-transform: translate(-8px, 6px);
+    -moz-transform: translate(-8px, 6px);
+    -ms-transform: translate(-8px, 6px);
+    -o-transform: translate(-8px, 6px);
+}
+
 
 /* main */
 
