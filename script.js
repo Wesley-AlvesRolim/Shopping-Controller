@@ -7,7 +7,7 @@ const overlay = {
         document.querySelector('.overlay').setAttribute('hidden', '')
     }
 }
-const table = {
+const cards = {
     array: [],
     deleteAll() {
         calculator.countingProducts.innerHTML = ''
@@ -15,26 +15,29 @@ const table = {
         return this.array = []
     },
     removeOn() {
-        if (table.array.length > 0) {
+        if (cards.array.length > 0) {
             document.querySelector('.removeOn').removeAttribute('style')
         } else {
             document.querySelector('.removeOn').setAttribute('style', 'opacity: 0; visibility: hidden;')
         }
     },
-    createTable(index) {
-        document.querySelector('.sectionTable').removeAttribute('style')
-        const tr = document.createElement('tr')
-        tr.innerHTML = table.innerHtml(index)
-        document.querySelector('.tbody').appendChild(tr)
+    createDiv(index) {
+        const sectionCards = document.querySelector('.sectionCards')
+        const div = document.createElement('div')
+        sectionCards.removeAttribute('style')
+        sectionCards.appendChild(div)
+        div.classList.add('card')
+        div.innerHTML = cards.innerHtml(index)
     },
     innerHtml(index) {
         const productsName = this.searchProductName(index.products).productsName
-        const productImage =  this.searchProductName(index.products).image
-        const tbodyContent = `
-                <td class= "productName-Image"><img src="${productImage}" alt="${productsName}">${productsName}</td>
-                <td>${index.productsQuantity}</td>
-                <td>${utils.formatPrice(index.products * index.productsQuantity)}</td>`
-        return tbodyContent
+        const productImage = this.searchProductName(index.products).image
+        const checkName = index.productsQuantity > 1 ? 'unidades' : 'unidade'
+        const content = `
+        <img src= "${productImage}" alt="${productsName}">
+        <p>${productsName}</p>
+        <p>${index.productsQuantity} ${checkName} por ${utils.formatPrice(index.products * index.productsQuantity)}</p>`
+        return content
     },
     searchProductName(price) {
         let productsName;
@@ -81,7 +84,7 @@ const table = {
                 image = 'https://images-submarino.b2w.io/produtos/01/00/img/134532/8/134532811_4GG.jpg'
                 break;
         }
-        return {productsName,image}
+        return { productsName, image }
     }
 }
 const calculator = {
@@ -89,26 +92,26 @@ const calculator = {
     totalHtml: document.querySelector('.total'),
     sumQuantity() {
         let quantity = 0
-        for (let index = 0; index < table.array.length; index++) {
-            const sum = table.array[index].productsQuantity;
+        for (let index = 0; index < cards.array.length; index++) {
+            const sum = cards.array[index].productsQuantity;
             quantity = quantity + sum
         }
         return quantity
     },
     sumPrice() {
         let initialPrice = 0
-        for (let index = 0; index < table.array.length; index++) {
-            const sum = table.array[index].productsQuantity;
-            const price = table.array[index].products;
+        for (let index = 0; index < cards.array.length; index++) {
+            const sum = cards.array[index].productsQuantity;
+            const price = cards.array[index].products;
             initialPrice = initialPrice + (price * sum)
         }
         return initialPrice
     },
     updateBalance(values) {
-        table.array.push(values)
+        cards.array.push(values)
         const sum = this.sumQuantity()
         const price = calculator.sumPrice()
-        this.countingProducts.innerHTML = `${sum} products`
+        this.countingProducts.innerHTML = `${sum} produtos`
         this.totalHtml.innerHTML = `Total: ${utils.formatPrice(price)}`
     }
 }
@@ -121,28 +124,34 @@ const utils = {
         return converted
     }
 }
+
 function focusEvent() {
     const cost = document.querySelector('.cost')
     const quantity = document.querySelector('.quantity')
 
-    form.productsQuantity.oninput = function () {
+    form.productsQuantity.oninput = function() {
         if (form.catchValues().productsQuantity <= 0) {
             const value = form.catchValues().products * form.catchValues().productsQuantity
-            cost.innerHTML = 'Cost: ' + utils.formatPrice(value)
-            quantity.innerHTML = 0 + ' units'
+            cost.innerHTML = 'Custo: ' + utils.formatPrice(value)
+            quantity.innerHTML = 0 + ' Unidades'
         } else {
             const value = form.catchValues().products * form.catchValues().productsQuantity
-            cost.innerHTML = 'Cost: ' + utils.formatPrice(value)
-            quantity.innerHTML = form.catchValues().productsQuantity + ' units'
+            cost.innerHTML = 'Custo: ' + utils.formatPrice(value)
+            quantity.innerHTML = Math.round(form.catchValues().productsQuantity) + ' Unidades'
         }
     }
-    form.products.oninput = function () {
+    form.products.oninput = function() {
         if (form.catchValues().productsQuantity <= 0) {
-            cost.innerHTML = `Cost: ${utils.formatPrice(0)}`
+            cost.innerHTML = `Custo: ${utils.formatPrice(0)}`
         } else {
-            const value = form.catchValues().products * form.catchValues().productsQuantity
-            cost.innerHTML = 'Cost: ' + utils.formatPrice(value)
+            const value = form.catchValues().products * Math.round(form.catchValues().productsQuantity)
+            cost.innerHTML = 'Custo: ' + utils.formatPrice(value)
         }
+
+        document.querySelector('.divImage').innerHTML = ''
+        const img = document.querySelector('.divImage').appendChild(document.createElement('img'))
+        img.classList.add('img')
+        img.setAttribute('src', cards.searchProductName(form.catchValues().products).image)
     }
 }
 const form = {
@@ -161,14 +170,15 @@ const form = {
     clearFields() {
         this.products.value = ''
         this.productsQuantity.value = ''
-        document.querySelector('.quantity').innerHTML = '0 units'
-        document.querySelector('.cost').innerHTML = 'Cost: R$ 0,00'
+        document.querySelector('.divImage').innerHTML = ''
+        document.querySelector('.quantity').innerHTML = '0 unidades'
+        document.querySelector('.cost').innerHTML = 'Custo: R$ 0,00'
     },
-    initTable() {
-        document.querySelector('tbody').innerHTML = ''
-        table.array.forEach(
+    initCards() {
+        document.querySelector('.sectionCards').innerHTML = ''
+        cards.array.forEach(
             (index) => {
-                table.createTable(index)
+                cards.createDiv(index)
             }
         )
     },
@@ -178,9 +188,9 @@ const form = {
             const values = this.catchValues()
             this.checkFields()
             calculator.updateBalance(values)
-            table.removeOn()
+            cards.removeOn()
             overlay.close()
-            form.initTable()
+            form.initCards()
         } catch (error) {
             setTimeout(() => {
                 if (this.catchValues().products == 0) {
