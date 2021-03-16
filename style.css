@@ -58,12 +58,12 @@ header img {
 .gitHub svg:hover {
     border: 2px solid #006eff;
     border-radius: 20rem;
-    box-shadow: 4px -3px .5rem 2px #000000;
-    transform: translate(-8px, 6px);
-    -webkit-transform: translate(-8px, 6px);
-    -moz-transform: translate(-8px, 6px);
-    -ms-transform: translate(-8px, 6px);
-    -o-transform: translate(-8px, 6px);
+    box-shadow: 1px 1px .5rem 2px #000000;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
     -webkit-border-radius: 20rem;
     -moz-border-radius: 20rem;
     -ms-border-radius: 20rem;
