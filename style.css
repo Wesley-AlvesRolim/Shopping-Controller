@@ -1,10 +1,9 @@
 :root {
     --background: #eeeeee;
     --background-overlay: #eeecec;
-    --header: #3559f8;
-    --button: #3a5dfa;
+    --gradient: linear-gradient(122deg, #5e35f0 0%, #15a0fd 100%);
+    --button: #3d7bff;
     --card: #fff;
-    --price: #2f55ff;
     --font: #31323d;
 }
 
@@ -26,7 +25,7 @@ body {
 header {
     width: 100%;
     height: 3rem;
-    background: var(--header);
+    background-image: var(--gradient);
     margin-bottom: 2rem;
     padding: 2.2rem 0;
     position: relative;
@@ -43,9 +42,9 @@ header img {
 }
 
 .gitHub {
-    position: fixed;
-    top: .2rem;
-    right: .2rem;
+    position: relative;
+    top: -1rem;
+    right: -7.2rem;
 }
 
 .gitHub svg {
@@ -57,12 +56,18 @@ header img {
 }
 
 .gitHub svg:hover {
+    border: 2px solid #006eff;
+    border-radius: 20rem;
     box-shadow: 4px -3px .5rem 2px #000000;
     transform: translate(-8px, 6px);
     -webkit-transform: translate(-8px, 6px);
     -moz-transform: translate(-8px, 6px);
     -ms-transform: translate(-8px, 6px);
     -o-transform: translate(-8px, 6px);
+    -webkit-border-radius: 20rem;
+    -moz-border-radius: 20rem;
+    -ms-border-radius: 20rem;
+    -o-border-radius: 20rem;
 }
 
 
@@ -93,6 +98,7 @@ main>section {
 .removeMensage {
     background: var(--button);
     padding: 1rem 2rem;
+    box-shadow: #2a59c0 1px 6px 0px;
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -103,7 +109,6 @@ main>section {
     -moz-border-radius: 12px;
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
-    box-shadow: #2644b3 1px 6px 0px;
 }
 
 a {
@@ -115,7 +120,7 @@ a {
     background: var(--button);
     padding: 0.6rem .7rem;
     margin-left: .2rem;
-    box-shadow: #2644b3 1px 6px 0px;
+    box-shadow: #2a59c0 1px 6px 0px;
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -162,7 +167,7 @@ a>img {
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 0 1px 1px #cccece;
+    box-shadow: 0 2px 1px #cccece;
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -238,7 +243,7 @@ select {
 .divImage img {
     height: 8rem;
     margin-top: .2rem;
-    box-shadow: 0 1px 1px #cccece;
+    box-shadow: 0 2px 1px #cccece;
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -364,7 +369,7 @@ footer {
 }
 
 footer>div {
-    background: var(--price);
+    background-image: var(--gradient);
     padding: 1.2rem;
     display: flex;
     justify-content: space-evenly;

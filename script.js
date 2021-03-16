@@ -34,9 +34,9 @@ const cards = {
         const productImage = this.searchProductName(index.products).image
         const checkName = index.productsQuantity > 1 ? 'unidades' : 'unidade'
         const content = `
-        <img src= "${productImage}" alt="${productsName}">
-        <p>${productsName}</p>
-        <p>${index.productsQuantity} ${checkName} por ${utils.formatPrice(index.products * index.productsQuantity)}</p>`
+            <img src= "${productImage}" alt="${productsName}">
+            <p>${productsName}</p>
+            <p>${index.productsQuantity} ${checkName} por ${utils.formatPrice(index.products * index.productsQuantity)}</p>`
         return content
     },
     searchProductName(price) {
@@ -130,14 +130,15 @@ function focusEvent() {
     const quantity = document.querySelector('.quantity')
 
     form.productsQuantity.oninput = function() {
+        const checkName = form.catchValues().productsQuantity > 1 ? ' Unidades' : ' Unidade'
         if (form.catchValues().productsQuantity <= 0) {
             const value = form.catchValues().products * form.catchValues().productsQuantity
             cost.innerHTML = 'Custo: ' + utils.formatPrice(value)
-            quantity.innerHTML = 0 + ' Unidades'
+            quantity.innerHTML = 0 + checkName
         } else {
             const value = form.catchValues().products * form.catchValues().productsQuantity
             cost.innerHTML = 'Custo: ' + utils.formatPrice(value)
-            quantity.innerHTML = Math.round(form.catchValues().productsQuantity) + ' Unidades'
+            quantity.innerHTML = Math.round(form.catchValues().productsQuantity) + checkName
         }
     }
     form.products.oninput = function() {
