@@ -7,6 +7,36 @@ const overlay = {
         document.querySelector('.overlay').setAttribute('hidden', '')
     }
 }
+
+const calculator = {
+    countingProducts: document.querySelector('.countingProducts'),
+    totalHtml: document.querySelector('.total'),
+    sumQuantity() {
+        let quantity = 0
+        cards.array.forEach((position) => {
+            const sum = position.productsQuantity
+            quantity = quantity + sum
+        })
+        return quantity
+    },
+    sumPrice() {
+        let initialPrice = 0
+        cards.array.forEach((position) => {
+            const sum = position.productsQuantity;
+            const price = position.products;
+            initialPrice = initialPrice + (price * sum)
+        })
+        return initialPrice
+    },
+    updateBalance(values) {
+        cards.array.push(values)
+        const sum = this.sumQuantity()
+        const price = calculator.sumPrice()
+        this.countingProducts.innerHTML = `${sum} produtos`
+        this.totalHtml.innerHTML = `Total: ${utils.formatPrice(price)}`
+    }
+}
+
 const cards = {
     array: [],
     deleteAll() {
@@ -87,34 +117,7 @@ const cards = {
         return { productsName, image }
     }
 }
-const calculator = {
-    countingProducts: document.querySelector('.countingProducts'),
-    totalHtml: document.querySelector('.total'),
-    sumQuantity() {
-        let quantity = 0
-        for (let index = 0; index < cards.array.length; index++) {
-            const sum = cards.array[index].productsQuantity;
-            quantity = quantity + sum
-        }
-        return quantity
-    },
-    sumPrice() {
-        let initialPrice = 0
-        for (let index = 0; index < cards.array.length; index++) {
-            const sum = cards.array[index].productsQuantity;
-            const price = cards.array[index].products;
-            initialPrice = initialPrice + (price * sum)
-        }
-        return initialPrice
-    },
-    updateBalance(values) {
-        cards.array.push(values)
-        const sum = this.sumQuantity()
-        const price = calculator.sumPrice()
-        this.countingProducts.innerHTML = `${sum} produtos`
-        this.totalHtml.innerHTML = `Total: ${utils.formatPrice(price)}`
-    }
-}
+
 const utils = {
     formatPrice(value) {
         const converted = value.toLocaleString('pt-BR', {
@@ -124,12 +127,11 @@ const utils = {
         return converted
     }
 }
-
-function focusEvent() {
+const focusEvent = () => {
     const cost = document.querySelector('.cost')
     const quantity = document.querySelector('.quantity')
 
-    form.productsQuantity.oninput = function() {
+    form.productsQuantity.oninput = function () {
         const checkName = form.catchValues().productsQuantity > 1 ? ' Unidades' : ' Unidade'
         if (form.catchValues().productsQuantity <= 0) {
             const value = form.catchValues().products * form.catchValues().productsQuantity
@@ -138,14 +140,14 @@ function focusEvent() {
         } else {
             const value = form.catchValues().products * form.catchValues().productsQuantity
             cost.innerHTML = 'Custo: ' + utils.formatPrice(value)
-            quantity.innerHTML = Math.round(form.catchValues().productsQuantity) + checkName
+            quantity.innerHTML = form.catchValues().productsQuantity + checkName
         }
     }
-    form.products.oninput = function() {
+    form.products.oninput = function () {
         if (form.catchValues().productsQuantity <= 0) {
             cost.innerHTML = `Custo: ${utils.formatPrice(0)}`
         } else {
-            const value = form.catchValues().products * Math.round(form.catchValues().productsQuantity)
+            const value = form.catchValues().products * form.catchValues().productsQuantity
             cost.innerHTML = 'Custo: ' + utils.formatPrice(value)
         }
 
@@ -155,6 +157,7 @@ function focusEvent() {
         img.setAttribute('src', cards.searchProductName(form.catchValues().products).image)
     }
 }
+
 const form = {
     productsQuantity: document.getElementById('productsQuantity'),
     products: document.getElementById('products'),
