@@ -2,9 +2,11 @@ const overlay = {
     open() {
         document.querySelector('.overlay').removeAttribute('hidden')
         form.clearFields()
+        form.fixScroll()
     },
     close() {
         document.querySelector('.overlay').setAttribute('hidden', '')
+        document.body.style.overflow = 'visible';
     }
 }
 
@@ -186,6 +188,12 @@ const form = {
             }
         )
     },
+    fixScroll() {
+        let length = cards.array.length
+        if (length >= 3) {
+            document.body.style.overflow = 'hidden';
+        }
+    },
     submit(event) {
         event.preventDefault()
         try {
@@ -193,8 +201,8 @@ const form = {
             this.checkFields()
             calculator.updateBalance(values)
             cards.removeOn()
-            overlay.close()
             form.initCards()
+            overlay.close()
         } catch (error) {
             setTimeout(() => {
                 if (this.catchValues().products == 0) {

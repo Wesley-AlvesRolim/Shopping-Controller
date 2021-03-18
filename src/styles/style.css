@@ -16,6 +16,31 @@
     font-size: 1.1rem;
 }
 
+*::-webkit-scrollbar {
+    width: .8rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    width: .1rem;
+    background-color: #cecdcd;
+    box-shadow: inset 0 0 8px #535353;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #414141;
+    background-color: var(--background);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
 body {
     background: var(--background);
     width: 100%;
@@ -198,7 +223,7 @@ a>img {
     width: 100%;
     height: 100vh;
     background-color: #0000009a;
-    position: fixed;
+    position: absolute;
     top: 0px;
 }
 
@@ -414,6 +439,12 @@ footer div p {
 
 .total {
     margin-left: .4rem;
+}
+
+@media (max-width: 374px) {
+    .sectionCards {
+        grid-template-columns: repeat(1, 10rem);
+    }
 }
 
 @media (min-width: 700px) {
