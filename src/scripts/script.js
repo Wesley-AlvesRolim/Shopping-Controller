@@ -131,7 +131,7 @@ const focusEvent = () => {
     const cost = document.querySelector('.cost')
     const quantity = document.querySelector('.quantity')
 
-    form.productsQuantity.oninput = function () {
+    form.productsQuantity.oninput = function() {
         const checkName = form.catchValues().productsQuantity > 1 ? ' Unidades' : ' Unidade'
         if (form.catchValues().productsQuantity <= 0) {
             const value = form.catchValues().products * form.catchValues().productsQuantity
@@ -143,7 +143,7 @@ const focusEvent = () => {
             quantity.innerHTML = form.catchValues().productsQuantity + checkName
         }
     }
-    form.products.oninput = function () {
+    form.products.oninput = function() {
         if (form.catchValues().productsQuantity <= 0) {
             cost.innerHTML = `Custo: ${utils.formatPrice(0)}`
         } else {
@@ -206,18 +206,26 @@ const form = {
                 const div = document.body.appendChild(document.createElement('div'))
                 const div2 = div.appendChild(document.createElement('div')).innerHTML = 'Por favor insira valores válidos nos campos'
                 div.className = 'errorMenssage'
+                setTimeout(() => {
+                    div.classList.add('on')
+                }, 100);
             }, 100);
             setTimeout(() => {
-                document.querySelector('.errorMenssage').remove()
+                document.querySelector('.errorMenssage').classList.remove('on')
+                setTimeout(() => {
+                    document.querySelector('.errorMenssage').remove()
+                }, 1000);
+                this.products.setAttribute('style', 'box-shadow: none;')
+                this.productsQuantity.setAttribute('style', 'box-shadow: none;')
             }, 4000);
         }
     }
 }
 window.onload = setInterval(() => {
-    document.querySelector('header img').setAttribute('style', ';top: -770px;opacity: 0; visibility: hidden;transition: .5s;')
-    document.querySelector('.brandIcon').setAttribute('style', 'top: 0;opacity: 1; visibility: visible;transition: .5s;')
+    document.querySelector('.brandIcon1').setAttribute('style', ';top: -770px;opacity: 0; visibility: hidden;transition: .5s;')
+    document.querySelector('.brandIcon2').setAttribute('style', 'top: 0;opacity: 1; visibility: visible;transition: .5s;')
     setTimeout(() => {
-        document.querySelector('header img').setAttribute('style', ';top: 0;opacity: 1; visibility: visible;transition: .5s;')
-        document.querySelector('.brandIcon').setAttribute('style', 'top: -770px;opacity: 0; visibility: hidden;transition: .5s;')
+        document.querySelector('.brandIcon1').setAttribute('style', ';top: 0;opacity: 1; visibility: visible;transition: .5s;')
+        document.querySelector('.brandIcon2').setAttribute('style', 'top: -770px;opacity: 0; visibility: hidden;transition: .5s;')
     }, 4000)
 }, 8000);
