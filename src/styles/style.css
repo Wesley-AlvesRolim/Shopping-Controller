@@ -2,7 +2,7 @@
     --background: #eeeeee;
     --background-overlay: #eeecec;
     --gradient: linear-gradient(122deg, #5e35f0 0%, #15a0fd 100%);
-    --gradient-footer: linear-gradient(2deg, #5e35f0 30%, #15a0fd 100%);
+    --gradient-footer: linear-gradient(0deg, #5e35f0 10%, #15a0fd 100%);
     --button: #3d7bff;
     --card: #fff;
     --font: #31323d;
