@@ -115,6 +115,26 @@ const cards = {
                 productsName = 'Liquidificador Philips'
                 image = 'https://images-submarino.b2w.io/produtos/01/00/img/134532/8/134532811_4GG.jpg'
                 break;
+            case 2922.99:
+                productsName = 'Playstation 4 + 3 Games'
+                image = 'https://images-submarino.b2w.io/produtos/01/00/img/2317562/0/2317562028P1.jpg'
+                break;
+            case 159.6:
+                productsName = 'Mouse Gamer Redragon Chroma'
+                image = 'https://images-submarino.b2w.io/produtos/01/00/img/46419/3/46419319_3GG.jpg'
+                break;
+            case 339:
+                productsName = 'Teclado Gamer HyperX Alloy Core'
+                image = 'https://images-submarino.b2w.io/produtos/01/00/img/98025/6/98025652_1SZ.jpg'
+                break;
+            case 279.99:
+                productsName = 'Headset Gamer Havit H2015d'
+                image = 'https://images-submarino.b2w.io/produtos/01/00/img/1809794/0/1809794044_1SZ.jpg'
+                break;
+            case 235.83:
+                productsName = 'The Last Of Us Part II - PS4'
+                image = 'https://images-submarino.b2w.io/produtos/01/00/img/1459449/0/1459449098_1SZ.jpg'
+                break;
         }
         return { productsName, image }
     }
