@@ -42,9 +42,10 @@ const calculator = {
 const cards = {
     array: [],
     deleteAll() {
-        calculator.countingProducts.innerHTML = ''
-        calculator.totalHtml.innerHTML = ''
-        return this.array = []
+        calculator.countingProducts.innerHTML = `${0} produtos`
+        calculator.totalHtml.innerHTML = `Total: ${utils.formatPrice(0)}`
+        cards.array.splice(0)
+        form.initCards()
     },
     removeOn() {
         if (cards.array.length > 0) {
