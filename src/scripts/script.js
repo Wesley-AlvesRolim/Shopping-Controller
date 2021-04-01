@@ -30,8 +30,7 @@ const calculator = {
         })
         return initialPrice
     },
-    updateBalance(values) {
-        cards.array.push(values)
+    updateBalance() {
         const sum = this.sumQuantity()
         const price = calculator.sumPrice()
         this.countingProducts.innerHTML = `${sum} produtos`
@@ -41,6 +40,11 @@ const calculator = {
 
 const cards = {
     array: [],
+    deleteOne(index) {
+        cards.array.splice(index, index + 1)
+        form.initCards()
+        calculator.updateBalance()
+    },
     deleteAll() {
         calculator.countingProducts.innerHTML = `${0} produtos`
         calculator.totalHtml.innerHTML = `Total: ${utils.formatPrice(0)}`
@@ -63,11 +67,15 @@ const cards = {
         div.innerHTML = cards.innerHtml(index)
     },
     innerHtml(index) {
+        const argumentForOnClick = cards.array.indexOf(index)
         const productsName = this.searchProductName(index.products).productsName
         const productImage = this.searchProductName(index.products).image
         const checkName = index.productsQuantity > 1 ? 'unidades' : 'unidade'
         const content = `
-            <img src= "${productImage}" alt="${productsName}">
+            <a href="#" onclick = "cards.deleteOne(${argumentForOnClick})">
+                <img src = "./assets/trash.svg" alt = "Trash" class= "trash" >
+            </a >
+            <img src="${productImage}" alt="${productsName}">
             <p>${productsName}</p>
             <p>${index.productsQuantity} ${checkName} por ${utils.formatPrice(index.products * index.productsQuantity)}</p>`
         return content
@@ -154,7 +162,7 @@ const focusEvent = () => {
     const cost = document.querySelector('.cost')
     const quantity = document.querySelector('.quantity')
 
-    form.productsQuantity.oninput = function() {
+    form.productsQuantity.oninput = function () {
         const checkName = form.catchValues().productsQuantity > 1 ? ' Unidades' : ' Unidade'
         if (form.catchValues().productsQuantity <= 0) {
             const value = form.catchValues().products * form.catchValues().productsQuantity
@@ -166,7 +174,7 @@ const focusEvent = () => {
             quantity.innerHTML = form.catchValues().productsQuantity + checkName
         }
     }
-    form.products.oninput = function() {
+    form.products.oninput = function () {
         if (form.catchValues().productsQuantity <= 0) {
             cost.innerHTML = `Custo: ${utils.formatPrice(0)}`
         } else {
@@ -220,7 +228,8 @@ const form = {
         try {
             const values = this.catchValues()
             this.checkFields()
-            calculator.updateBalance(values)
+            cards.array.push(values)
+            calculator.updateBalance()
             cards.removeOn()
             form.initCards()
             overlay.close()
