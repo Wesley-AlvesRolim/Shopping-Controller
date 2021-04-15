@@ -20,7 +20,7 @@
 <br>
 <br>
 <span>To go into the app click</span>
-  <a href="https://wesley-shopping-calculator.netlify.app" style="background-color: green; padding: 1rem 2rem; color:azure; border-radius: 5rem; text-align: center; align-items: center;">here</a>
+  <a href="https://wesley-shopping-controller.netlify.app"><strong>here</strong></a>
 <br>
 
 
