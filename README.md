@@ -13,7 +13,9 @@
 <br>
 
 ## 💻 Project
-## This application assists in your expenses like the shopping cart.
+
+
+<p>This application assists in your expenses like the shopping cart.</p>
 
 <br>
 <img src="./assets/README.gif" alt="Readme Gif">
