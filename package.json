@@ -1,0 +1,24 @@
+{
+    "name": "shopping-controller",
+    "version": "1.0.0",
+    "description": "Shopping controller",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack -w"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Wesley-AlvesRolim/Shopping-Controller.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Wesley-AlvesRolim/Shopping-Controller/issues"
+    },
+    "homepage": "https://github.com/Wesley-AlvesRolim/Shopping-Controller#readme",
+    "devDependencies": {
+        "webpack": "^5.36.2",
+        "webpack-cli": "^4.6.0"
+    }
+}
