@@ -1,10 +1,13 @@
-import { overlay, form, cards, utils } from './script';
+import { overlay } from './overlay';
+import { cards } from './cards';
+import { utils } from './utils';
+import { form } from './form';
 
-document.querySelector('.addButton').addEventListener('click', e => {
+document.querySelector('.addButton').addEventListener('click', () => {
     overlay.open();
 });
 
-document.querySelector('.removeButton').addEventListener('click', e => {
+document.querySelector('.removeButton').addEventListener('click', () => {
     cards.deleteAll();
 });
 
@@ -18,11 +21,7 @@ label.forEach(element => {
     element.nextElementSibling.addEventListener('focus', () => {
         focusEvent();
     });
-})
-
-if (document.querySelector('.delete')) {
-
-}
+});
 
 document.querySelector('form').addEventListener('submit', e => {
     form.submit(e);
@@ -30,22 +29,22 @@ document.querySelector('form').addEventListener('submit', e => {
 
 
 const focusEvent = () => {
-    const cost = document.querySelector(".cost");
-    const quantity = document.querySelector(".quantity");
+    const cost = document.querySelector('.cost');
+    const quantity = document.querySelector('.quantity');
 
     form.productsQuantity.oninput = function() {
         if (form.catchValues().productsQuantity >= 1000000) Number(form.productsQuantity.value = form.catchValues().productsQuantity.toString().slice(0, -1));
         const checkName =
-            form.catchValues().productsQuantity > 1 ? " Unidades" : " Unidade";
+            form.catchValues().productsQuantity > 1 ? ' Unidades' : ' Unidade';
         if (form.catchValues().productsQuantity <= 0) {
             const value =
                 form.catchValues().products * form.catchValues().productsQuantity;
             cost.innerHTML =
-                "Custo: " + utils.formatPrice(value);
+                'Custo: ' + utils.formatPrice(value);
             quantity.innerHTML = 0 + checkName;
         } else {
             const value = form.catchValues().products * form.catchValues().productsQuantity;
-            cost.innerHTML = "Custo: " + utils.formatPrice(value);
+            cost.innerHTML = 'Custo: ' + utils.formatPrice(value);
             quantity.innerHTML = form.catchValues().productsQuantity + checkName;
         }
     };
@@ -56,16 +55,17 @@ const focusEvent = () => {
             const value =
                 form.catchValues().products *
                 form.catchValues().productsQuantity;
-            cost.innerHTML = "Custo: " + utils.formatPrice(value);
+            cost.innerHTML = 'Custo: ' + utils.formatPrice(value);
         }
 
-        document.querySelector(".divImage").innerHTML = "";
-        const img = document
-            .querySelector(".divImage")
-            .appendChild(document.createElement("img"));
-        img.classList.add("img");
+        const divImage = document.querySelector('.divImage');
+        divImage.innerHTML = '';
+        const img = document.createElement('img');
+        divImage.appendChild(img);
+
+        img.classList.add('img');
         img.setAttribute(
-            "src",
+            'src',
             cards.searchProductName(form.catchValues().products).image
         );
     };
@@ -73,29 +73,29 @@ const focusEvent = () => {
 
 window.onload = setInterval(() => {
     document
-        .querySelector(".brandIcon1")
+        .querySelector('.brandIcon1')
         .setAttribute(
-            "style",
-            ";top: -770px;opacity: 0; visibility: hidden;transition: .5s;"
+            'style',
+            ';top: -770px;opacity: 0; visibility: hidden;transition: .5s;'
         );
     document
-        .querySelector(".brandIcon2")
+        .querySelector('.brandIcon2')
         .setAttribute(
-            "style",
-            "top: 0;opacity: 1; visibility: visible;transition: .5s;"
+            'style',
+            'top: 0;opacity: 1; visibility: visible;transition: .5s;'
         );
     setTimeout(() => {
         document
-            .querySelector(".brandIcon1")
+            .querySelector('.brandIcon1')
             .setAttribute(
-                "style",
-                ";top: 0;opacity: 1; visibility: visible;transition: .5s;"
+                'style',
+                ';top: 0;opacity: 1; visibility: visible;transition: .5s;'
             );
         document
-            .querySelector(".brandIcon2")
+            .querySelector('.brandIcon2')
             .setAttribute(
-                "style",
-                "top: -770px;opacity: 0; visibility: hidden;transition: .5s;"
+                'style',
+                'top: -770px;opacity: 0; visibility: hidden;transition: .5s;'
             );
     }, 4000);
 }, 8000);
