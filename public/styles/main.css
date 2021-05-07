@@ -1,7 +1,7 @@
 :root {
     --background: #eeeeee;
     --background-overlay: #eeecec;
-    --gradient: linear-gradient(122deg, #5e35f0 0%, #15a0fd 100%);
+    --header-color: #15a0fd;
     --gradient-footer: linear-gradient(0deg, #5e35f0 10%, #15a0fd 100%);
     --button: #3d7bff;
     --card: #fff;
@@ -12,7 +12,7 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
-    font-family: 'Supermercado One', cursive;
+    font-family: 'Fira Sans', sans-serif;
     color: var(--font);
     font-size: 1.1rem;
 }
@@ -138,6 +138,9 @@ a>img {
 }
 
 @media (min-width: 700px) {
+    .bar {
+        max-width: 20vw;
+    }
     .sectionCards {
         grid-template-columns: repeat(3, 10rem);
         grid-gap: .8rem .6rem;
