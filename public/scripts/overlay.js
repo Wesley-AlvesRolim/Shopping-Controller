@@ -11,3 +11,12 @@ export const overlay = {
         document.body.style.overflow = 'visible';
     },
 };
+
+export const sideBar = {
+    divMenu: document.querySelector('div.menu'),
+    sideBarElement: document.querySelector('.sideBar'),
+    openClose() {
+        this.divMenu.classList.toggle('active');
+        this.sideBarElement.classList.toggle('active');
+    }
+};

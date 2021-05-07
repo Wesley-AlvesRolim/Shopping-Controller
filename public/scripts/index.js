@@ -1,7 +1,13 @@
-import { overlay } from './overlay';
+import { overlay, sideBar } from './overlay';
 import { cards } from './cards';
 import { utils } from './utils';
 import { form } from './form';
+
+
+document.querySelector('div.menu').addEventListener('click', () => {
+    sideBar.openClose();
+});
+
 
 document.querySelector('.addButton').addEventListener('click', () => {
     overlay.open();
@@ -32,7 +38,7 @@ const focusEvent = () => {
     const cost = document.querySelector('.cost');
     const quantity = document.querySelector('.quantity');
 
-    form.productsQuantity.oninput = function() {
+    form.productsQuantity.oninput = function () {
         if (form.catchValues().productsQuantity >= 1000000) Number(form.productsQuantity.value = form.catchValues().productsQuantity.toString().slice(0, -1));
         const checkName =
             form.catchValues().productsQuantity > 1 ? ' Unidades' : ' Unidade';
@@ -48,7 +54,7 @@ const focusEvent = () => {
             quantity.innerHTML = form.catchValues().productsQuantity + checkName;
         }
     };
-    form.products.oninput = function() {
+    form.products.oninput = function () {
         if (form.catchValues().productsQuantity <= 0) {
             cost.innerHTML = `Custo: ${utils.formatPrice(0)}`;
         } else {
