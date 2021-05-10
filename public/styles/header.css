@@ -107,32 +107,6 @@ header {
     margin-top: .4rem;
 }
 
-svg {
-    height: 30px;
-    position: relative;
-    transition: .6s;
-    -webkit-transition: .6s;
-    -moz-transition: .6s;
-    -ms-transition: .6s;
-    -o-transition: .6s;
-    border-radius: 30%;
-    -webkit-border-radius: 30%;
-    -moz-border-radius: 30%;
-    -ms-border-radius: 30%;
-    -o-border-radius: 30%;
-}
-
-.linkedin svg {
-    fill: #358cf0;
-}
-
-svg:hover {
-    transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
-}
 
 .sideBar {
     opacity: 0;
@@ -157,6 +131,7 @@ svg:hover {
     width: 50vw;
     padding: 10px;
     background-color: #fff;
+    border: .4rem solid #eeeeee;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -197,6 +172,33 @@ svg:hover {
     align-items: center;
 }
 
+.sideBar svg {
+    height: 30px;
+    position: relative;
+    transition: .6s;
+    -webkit-transition: .6s;
+    -moz-transition: .6s;
+    -ms-transition: .6s;
+    -o-transition: .6s;
+    border-radius: 30%;
+    -webkit-border-radius: 30%;
+    -moz-border-radius: 30%;
+    -ms-border-radius: 30%;
+    -o-border-radius: 30%;
+}
+
+.linkedin svg {
+    fill: #358cf0;
+}
+
+.sideBar svg:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
 .socialMedia p {
     font-size: 1.5rem;
     margin-left: .6rem;
@@ -234,6 +236,7 @@ svg:hover {
     0% {
         width: 0;
     }
+
     100% {
         width: 100%;
     }
@@ -247,6 +250,7 @@ svg:hover {
         -ms-transform: translateX(-15rem);
         -o-transform: translateX(-15rem);
     }
+
     100% {
         transform: translateX(0);
         -webkit-transform: translateX(0);
