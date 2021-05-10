@@ -158,6 +158,7 @@ select {
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 5;
     transition: .8s;
     -webkit-transition: .8s;
     -moz-transition: .8s;
