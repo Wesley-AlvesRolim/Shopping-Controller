@@ -8,6 +8,9 @@ document.querySelector('div.menu').addEventListener('click', () => {
     sideBar.openClose();
 });
 
+document.querySelector('.cartIcon').addEventListener('click', () => {
+    document.querySelector('.overlayCart').classList.add('active');
+    document.body.style.overflow = 'hidden';
 
 document.querySelector('.addButton').addEventListener('click', () => {
     overlay.open();
