@@ -1,4 +1,4 @@
-footer {
+/* footer {
     width: 100%;
     margin: auto;
     position: fixed;
@@ -15,12 +15,4 @@ footer>div {
 
 footer div p {
     font-size: 1.2rem;
-}
-
-.countingProducts {
-    margin: .4rem;
-}
-
-.total {
-    margin-left: .4rem;
-}
+} */
