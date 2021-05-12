@@ -22,6 +22,10 @@ header {
     align-items: center;
 }
 
+.menu.fixed {
+    position: fixed;
+}
+
 .menu div {
     height: 3px;
     width: 90%;
