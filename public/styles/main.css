@@ -12,9 +12,9 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     color: var(--font);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 *::-webkit-scrollbar {
