@@ -1,12 +1,12 @@
 import { overlay, sideBar } from './overlay';
 import { cards } from './cards';
-import { utils } from './utils';
 import { form } from './form';
+import { products } from './data';
+import { openedForm } from './openedForm';
+import { initCards } from './cart';
 
+let obj;
 
-document.querySelector('div.menu').addEventListener('click', () => {
-    sideBar.openClose();
-});
 
 document.querySelector('.cartIcon').addEventListener('click', () => {
     document.querySelector('.overlayCart').classList.add('active');
@@ -23,7 +23,6 @@ document.querySelector('div.menu').addEventListener('click', () => {
     sideBar.openClose();
 });
 
-
 document.querySelector('.actions').addEventListener('click', e => {
     if (e.target.tagName === 'A') overlay.close();
 });
@@ -39,55 +38,12 @@ document.querySelector('.actions').addEventListener('click', e => {
             openedForm(value, image);
             obj = products[index];
         });
-});
+    });
+})();
 
 document.querySelector('form').addEventListener('submit', e => {
-    form.submit(e);
+    form.submit(e, obj);
 });
-
-
-const focusEvent = () => {
-    const cost = document.querySelector('.cost');
-    const quantity = document.querySelector('.quantity');
-
-    form.productsQuantity.oninput = function () {
-        if (form.catchValues().productsQuantity >= 1000000) Number(form.productsQuantity.value = form.catchValues().productsQuantity.toString().slice(0, -1));
-        const checkName =
-            form.catchValues().productsQuantity > 1 ? ' Unidades' : ' Unidade';
-        if (form.catchValues().productsQuantity <= 0) {
-            const value =
-                form.catchValues().products * form.catchValues().productsQuantity;
-            cost.innerHTML =
-                'Custo: ' + utils.formatPrice(value);
-            quantity.innerHTML = 0 + checkName;
-        } else {
-            const value = form.catchValues().products * form.catchValues().productsQuantity;
-            cost.innerHTML = 'Custo: ' + utils.formatPrice(value);
-            quantity.innerHTML = form.catchValues().productsQuantity + checkName;
-        }
-    };
-    form.products.oninput = function () {
-        if (form.catchValues().productsQuantity <= 0) {
-            cost.innerHTML = `Custo: ${utils.formatPrice(0)}`;
-        } else {
-            const value =
-                form.catchValues().products *
-                form.catchValues().productsQuantity;
-            cost.innerHTML = 'Custo: ' + utils.formatPrice(value);
-        }
-
-        const divImage = document.querySelector('.divImage');
-        divImage.innerHTML = '';
-        const img = document.createElement('img');
-        divImage.appendChild(img);
-
-        img.classList.add('img');
-        img.setAttribute(
-            'src',
-            cards.searchProductName(form.catchValues().products).image
-        );
-    };
-};
 
 window.onload = setInterval(() => {
     document
