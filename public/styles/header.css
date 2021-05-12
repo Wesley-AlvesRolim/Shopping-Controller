@@ -216,7 +216,7 @@ header {
     width: 100%;
     height: 2px;
     position: absolute;
-    background-image: var(--gradient-footer);
+    background-image: linear-gradient(0deg, #5e35f0 10%, #15a0fd 100%);
     transform: translate(-4.75rem, 2.17rem);
     -webkit-transform: translate(-4.75rem, 2.17rem);
     -moz-transform: translate(-4.75rem, 2.17rem);
