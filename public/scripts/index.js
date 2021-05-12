@@ -19,8 +19,8 @@ document.querySelector('.cartIcon').addEventListener('click', () => {
     initCards();
 });
 
-document.querySelector('.removeButton').addEventListener('click', () => {
-    cards.deleteAll();
+document.querySelector('div.menu').addEventListener('click', () => {
+    sideBar.openClose();
 });
 
 
