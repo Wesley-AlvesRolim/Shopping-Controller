@@ -16,7 +16,7 @@ export const calculator = {
         let initialPrice = 0;
         cartArray.forEach((position) => {
             const sum = position.productsQuantity;
-            const price = position.products;
+            const price = position.value;
             initialPrice += price * sum;
         });
         return initialPrice;
