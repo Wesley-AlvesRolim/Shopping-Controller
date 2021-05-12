@@ -12,8 +12,11 @@ document.querySelector('.cartIcon').addEventListener('click', () => {
     document.querySelector('.overlayCart').classList.add('active');
     document.body.style.overflow = 'hidden';
 
-document.querySelector('.addButton').addEventListener('click', () => {
-    overlay.open();
+    document.querySelector('#closeWindow').addEventListener('click', () => {
+        document.querySelector('.overlayCart').classList.remove('active');
+        document.body.style.overflow = 'visible';
+    });
+    initCards();
 });
 
 document.querySelector('.removeButton').addEventListener('click', () => {
