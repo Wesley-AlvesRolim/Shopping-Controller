@@ -28,11 +28,17 @@ document.querySelector('.actions').addEventListener('click', e => {
     if (e.target.tagName === 'A') overlay.close();
 });
 
-const label = document.querySelectorAll('label');
-label.forEach(element => {
-    element.nextElementSibling.addEventListener('focus', () => {
-        focusEvent();
-    });
+(function loadCards() {
+    document.querySelector('.sectionCards').innerHTML = '';
+    products.forEach(index => { cards.createDiv(index); });
+
+    document.querySelectorAll('.card').forEach((element, index) => {
+        const { value, image } = products[index];
+        element.addEventListener('click', () => {
+            overlay.open();
+            openedForm(value, image);
+            obj = products[index];
+        });
 });
 
 document.querySelector('form').addEventListener('submit', e => {
