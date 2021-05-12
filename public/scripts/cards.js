@@ -1,5 +1,5 @@
 import { calculator } from './calculator';
-import { form } from './form';
+import { cartArray, initCards } from './cart';
 import { utils } from './utils';
 
 export const cards = {
