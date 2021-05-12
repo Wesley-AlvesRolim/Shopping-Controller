@@ -5,22 +5,30 @@
     position: absolute;
     top: 0px;
     z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
 }
 
 .overlay>div {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.overlay div>h2 {
-    line-height: 1.5rem;
+.overlay label {
+    font-size: 110%;
+    font-weight: 700;
 }
 
 form {
-    max-width: 90vw;
+    max-width: 80vw;
     background: var(--background-overlay);
     padding: 1.6rem;
     border-radius: 1rem;
@@ -34,9 +42,10 @@ form div {
     margin-bottom: 6px;
 }
 
-input,
-select {
+input {
     width: 100%;
+    padding: 0 .4rem;
+    font-size: 110%;
 }
 
 .divImage {
@@ -73,10 +82,6 @@ select {
     flex-wrap: wrap-reverse;
     justify-content: space-between;
     align-items: center;
-}
-
-.cost {
-    margin-right: .4rem;
 }
 
 .quantity {
