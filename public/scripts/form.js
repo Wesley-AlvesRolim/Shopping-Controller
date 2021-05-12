@@ -4,12 +4,11 @@ import { overlay } from './overlay';
 
 export const form = {
     productsQuantity: document.getElementById('productsQuantity'),
-    products: document.getElementById('products'),
+
     catchValues() {
-        const productsQuantity = Number(this.productsQuantity.value);
-        const products = Number(this.products.value);
-        return { productsQuantity, products };
+        return { productsQuantity: Number(this.productsQuantity.value) };
     },
+
     checkFields() {
         if (
             this.catchValues().products === '' ||
