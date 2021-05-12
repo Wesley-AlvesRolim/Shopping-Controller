@@ -1,4 +1,4 @@
-import { cards } from './cards';
+import { cartArray } from './cart';
 import { utils } from './utils';
 
 export const calculator = {
@@ -6,7 +6,7 @@ export const calculator = {
     totalHtml: document.querySelector('.total'),
     sumQuantity() {
         let quantity = 0;
-        cards.array.forEach((position) => {
+        cartArray.forEach((position) => {
             const sum = position.productsQuantity;
             quantity += sum;
         });
@@ -14,7 +14,7 @@ export const calculator = {
     },
     sumPrice() {
         let initialPrice = 0;
-        cards.array.forEach((position) => {
+        cartArray.forEach((position) => {
             const sum = position.productsQuantity;
             const price = position.products;
             initialPrice += price * sum;
