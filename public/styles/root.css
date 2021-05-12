@@ -88,6 +88,10 @@ a>img {
     }
     #cart {
         padding: 0;
+        gap: 1rem 0;
+    }
+    #cart .card {
+        width: 7.5rem;
     }
 }
 
@@ -102,7 +106,7 @@ a>img {
     }
     #cart {
         grid-template-columns: repeat(2, 10rem);
-        grid-gap: .8rem 0rem;
+        grid-gap: .8rem 0;
     }
     .content {
         height: 80vh;
