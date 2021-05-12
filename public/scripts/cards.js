@@ -3,7 +3,6 @@ import { cartArray, initCards } from './cart';
 import { utils } from './utils';
 
 export const cards = {
-    array: [],
     deleteOne(index) {
         cartArray.splice(index, 1);
         calculator.updateBalance();
