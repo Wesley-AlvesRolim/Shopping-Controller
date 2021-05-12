@@ -12,17 +12,8 @@ export const cards = {
     deleteAll() {
         calculator.countingProducts.innerHTML = `${0} produtos`;
         calculator.totalHtml.innerHTML = `Total: ${utils.formatPrice(0)}`;
-        cards.array.splice(0);
-        form.initCards();
-    },
-    removeOn() {
-        if (cards.array.length > 0) {
-            document.querySelector('.removeOn').removeAttribute('style');
-        } else {
-            document
-                .querySelector('.removeOn')
-                .setAttribute('style', 'opacity: 0; visibility: hidden;');
-        }
+        cartArray.splice(0);
+        initCards();
     },
     createDiv(index) {
         const sectionCards = document.querySelector('.sectionCards');
