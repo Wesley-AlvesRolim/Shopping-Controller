@@ -5,9 +5,9 @@ import { utils } from './utils';
 export const cards = {
     array: [],
     deleteOne(index) {
-        cards.array.splice(index, 1);
+        cartArray.splice(index, 1);
         calculator.updateBalance();
-        form.initCards();
+        initCards();
     },
     deleteAll() {
         calculator.countingProducts.innerHTML = `${0} produtos`;
