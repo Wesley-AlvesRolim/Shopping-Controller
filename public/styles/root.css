@@ -16,7 +16,7 @@
 }
 
 *::-webkit-scrollbar {
-    width: .8rem;
+    width: .6rem;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -88,10 +88,7 @@ a>img {
     }
     #cart {
         padding: 0;
-        gap: 1rem 0;
-    }
-    #cart .card {
-        width: 7.5rem;
+        grid-template-columns: repeat(1, 10rem);
     }
 }
 
@@ -110,7 +107,7 @@ a>img {
     }
     .content {
         height: 80vh;
-        width: 60vw;
+        max-width: 70vw;
     }
     .calculation {
         flex-wrap: wrap;
@@ -141,10 +138,6 @@ a>img {
     }
     form {
         max-width: 35vw;
-    }
-    .content {
-        width: 72vw;
-        max-width: 80vw;
     }
     #cart {
         grid-template-columns: repeat(4, 10rem);
