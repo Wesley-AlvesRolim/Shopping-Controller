@@ -1,8 +1,8 @@
 .overlay {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: #0000009a;
-    position: absolute;
+    position: fixed;
     top: 0px;
     z-index: 5;
     visibility: hidden;
