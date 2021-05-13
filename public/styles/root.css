@@ -92,6 +92,12 @@ a>img {
     }
 }
 
+@media screen and (min-width: 375px) {
+    .content header+div {
+        padding: 0 1rem;
+    }
+}
+
 @media (min-width: 700px) {
     .bar {
         max-width: 25vw;
@@ -140,7 +146,7 @@ a>img {
         max-width: 35vw;
     }
     #cart {
-        grid-template-columns: repeat(4, 10rem);
+        grid-template-columns: repeat(3, 10rem);
         grid-gap: 1.8rem 0rem;
     }
     #cart .card {
@@ -148,5 +154,11 @@ a>img {
     }
     #cart .card>img {
         height: 50%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #cart {
+        grid-template-columns: repeat(4, 10rem);
     }
 }
