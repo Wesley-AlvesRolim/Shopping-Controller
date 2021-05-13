@@ -48,6 +48,12 @@ input {
     font-size: 110%;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
 .divImage {
     width: 100%;
     margin: 0;
