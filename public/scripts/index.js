@@ -44,32 +44,3 @@ document.querySelector('.actions').addEventListener('click', e => {
 document.querySelector('form').addEventListener('submit', e => {
     form.submit(e, obj);
 });
-
-window.onload = setInterval(() => {
-    document
-        .querySelector('.brandIcon1')
-        .setAttribute(
-            'style',
-            ';top: -770px;opacity: 0; visibility: hidden;transition: .5s;'
-        );
-    document
-        .querySelector('.brandIcon2')
-        .setAttribute(
-            'style',
-            'top: 0;opacity: 1; visibility: visible;transition: .5s;'
-        );
-    setTimeout(() => {
-        document
-            .querySelector('.brandIcon1')
-            .setAttribute(
-                'style',
-                ';top: 0;opacity: 1; visibility: visible;transition: .5s;'
-            );
-        document
-            .querySelector('.brandIcon2')
-            .setAttribute(
-                'style',
-                'top: -770px;opacity: 0; visibility: hidden;transition: .5s;'
-            );
-    }, 4000);
-}, 8000);
