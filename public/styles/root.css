@@ -83,45 +83,45 @@ a>img {
 /* Responsiveness */
 
 @media (max-width: 375px) {
-    .sectionCards {
+    .section-cards {
         grid-template-columns: repeat(1, 10rem);
     }
-    #cart {
+    .cart-overlay__content__cart {
         padding: 0;
         grid-template-columns: repeat(1, 10rem);
     }
 }
 
 @media screen and (min-width: 375px) {
-    .content header+div {
+    .cart-overlay__content__balance {
         padding: 0 1rem;
     }
 }
 
 @media (min-width: 700px) {
-    .bar {
+    .overlay-side-bar__bar {
         max-width: 25vw;
         border: .2rem solid #eeeeee;
     }
-    .sectionCards {
+    .section-cards {
         grid-template-columns: repeat(4, 10rem);
         grid-gap: .8rem .6rem;
     }
-    #cart {
+    .cart-overlay__content__cart {
         grid-template-columns: repeat(2, 10rem);
         grid-gap: .8rem 0;
     }
-    .content {
+    .cart-overlay__content {
         height: 80vh;
         max-width: 70vw;
     }
-    .calculation {
+    .form-overlay__form__calculation {
         flex-wrap: wrap;
     }
     form {
         max-width: 45vw;
     }
-    .calculation {
+    .form-overlay__form__calculation {
         flex-wrap: wrap-reverse;
     }
     .errorMenssage>div,
@@ -138,27 +138,27 @@ a>img {
 }
 
 @media screen and (min-width: 800px) {
-    .bar {
+    .overlay-side-bar__bar {
         max-width: 20vw;
         border: .4rem solid #eeeeee;
     }
     form {
         max-width: 35vw;
     }
-    #cart {
+    .cart-overlay__content__cart {
         grid-template-columns: repeat(3, 10rem);
         grid-gap: 1.8rem 0rem;
     }
-    #cart .card {
+    .cart-overlay__content__cart .card {
         width: 9.5rem;
     }
-    #cart .card>img {
+    .cart-overlay__content__cart .card>img {
         height: 50%;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    #cart {
+    .cart-overlay__content__cart {
         grid-template-columns: repeat(4, 10rem);
     }
 }
