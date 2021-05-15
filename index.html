@@ -19,26 +19,25 @@
 </head>
 
 <body>
-    <header>
-        <div class="menu">
+    <header class="header">
+        <div class="header__menu">
             <div></div>
         </div>
-        <img class="brandIcon" src="assets/favicon.svg" alt="Logo" />
-        <div class="cartIcon" style="position: absolute; right: 1rem;">
+        <img class="header__brand-icon" src="assets/favicon.svg" alt="Logo" />
+        <div class="header__cart" style="position: absolute; right: 1rem;">
             <img src="./assets/cartIcon.svg" alt="Carrinho de compras." style="height: 2rem;">
         </div>
     </header>
     <main>
         <h1>Veja nossos produtos! ^^</h1>
-        <section class="sectionCards" style="opacity: 0; visibility: hidden">
-        </section>
+        <section class="section-cards" style="opacity: 0; visibility: hidden"></section>
     </main>
     <footer></footer>
 
-    <div class="sideBar">
-        <div class="bar">
-            <div class="socialMedia">
-                <div class="github">
+    <div class="overlay-side-bar">
+        <div class="overlay-side-bar__bar">
+            <div class="social-media">
+                <div class="social-media__github">
                     <a href="https://github.com/Wesley-AlvesRolim" target="_blank">
                         <svg height="24" viewBox="0 0 16 16">
                             <path
@@ -48,7 +47,7 @@
                         <p>Github</p>
                     </a>
                 </div>
-                <div class="linkedin">
+                <div class="social-media__linkedin">
                     <a href="https://www.linkedin.com/in/wesley-alves-rolim-2bba1b209/" target="_blank">
                         <svg height="24" viewBox="0 0 34 34">
                             <g>
@@ -64,22 +63,22 @@
         </div>
     </div>
 
-    <div class="overlay">
+    <div class="form-overlay">
         <div>
-            <form>
-                <div>
+            <form class="form-overlay__form">
+                <div class="form-overlay__form__input-block">
                     <label for="productsQuantity">
                         Serão quantas unidades?
                     </label>
                     <input type="number" id="productsQuantity" min="1" placeholder="Digite aqui!" />
                 </div>
 
-                <div class="divImage"></div>
-                <div class="calculation">
-                    <p class="quantity">0 Unidades</p>
-                    <p class="cost">Custo: R$ 0,00</p>
+                <div class="form-overlay__form__img"></div>
+                <div class="form-overlay__form__calculation">
+                    <p class="form-overlay__form__calculation__quantity">0 Unidades</p>
+                    <p class="form-overlay__form__calculation__cost">Custo: R$ 0,00</p>
                 </div>
-                <div class="actions">
+                <div class="form-overlay__form__actions">
                     <a href="#">Sair</a>
                     <button>Enviar</button>
                 </div>
@@ -87,17 +86,17 @@
         </div>
     </div>
 
-    <div class="overlayCart">
-        <div class="content">
-            <header>
+    <div class="cart-overlay">
+        <div class="cart-overlay__content">
+            <header class="cart-overlay__content__header">
                 <h2>Carrinho de compras.</h2>
-                <img id="closeWindow" src="./assets/closeWindow.svg" alt="Fechar a janela.">
+                <img class="close-window-icon" src="./assets/closeWindow.svg" alt="Fechar a janela.">
             </header>
-            <div>
-                <p class="countingProducts">0 produtos</p>
+            <div class="cart-overlay__content__balance">
+                <p class="counting-products">0 produtos</p>
                 <p class="total">Total: R$0,00</p>
             </div>
-            <div id="cart"></div>
+            <div class="cart-overlay__content__cart"></div>
         </div>
     </div>
     <script src="./public/bundle.js"></script>
