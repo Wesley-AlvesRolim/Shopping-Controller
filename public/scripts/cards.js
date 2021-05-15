@@ -15,7 +15,7 @@ export const cards = {
         initCards();
     },
     createDiv(index) {
-        const sectionCards = document.querySelector('.sectionCards');
+        const sectionCards = document.querySelector('.section-cards');
         const div = document.createElement('div');
         sectionCards.removeAttribute('style');
         sectionCards.appendChild(div);

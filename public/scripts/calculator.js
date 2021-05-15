@@ -2,7 +2,7 @@ import { cartArray } from './cart';
 import { utils } from './utils';
 
 export const calculator = {
-    countingProducts: document.querySelector('.countingProducts'),
+    countingProducts: document.querySelector('.counting-products'),
     totalHtml: document.querySelector('.total'),
     sumQuantity() {
         let quantity = 0;

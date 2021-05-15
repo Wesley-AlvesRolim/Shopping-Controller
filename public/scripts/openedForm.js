@@ -2,14 +2,14 @@ import { form } from './form';
 import { utils } from './utils';
 
 export function openedForm(value, image) {
-    const cost = document.querySelector('.cost');
+    const cost = document.querySelector('.form-overlay__form__calculation__cost');
     cost.innerHTML = `Custo: ${utils.formatPrice(0)}`;
     createImg(image);
     focus(value);
 }
 
 function createImg(imageLink) {
-    const divImage = document.querySelector('.divImage');
+    const divImage = document.querySelector('.form-overlay__form__img');
     const img = document.createElement('img');
     divImage.appendChild(img);
 
@@ -18,8 +18,8 @@ function createImg(imageLink) {
 }
 
 function focus(value, stock = 100) {
-    const cost = document.querySelector('.cost');
-    const quantity = document.querySelector('.quantity');
+    const cost = document.querySelector('.form-overlay__form__calculation__cost');
+    const quantity = document.querySelector('.form-overlay__form__calculation__quantity');
 
     document.querySelector('input[type="number"]').addEventListener('focus', () => {
         form.productsQuantity.oninput = function() {
