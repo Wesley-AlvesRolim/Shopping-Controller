@@ -1,4 +1,4 @@
-header {
+.header {
     width: 100%;
     height: 3rem;
     background: var(--header-color);
@@ -8,7 +8,7 @@ header {
     justify-content: space-around;
 }
 
-.menu {
+.header__menu {
     width: 2.5rem;
     height: 2.5rem;
     padding: 4px;
@@ -21,11 +21,11 @@ header {
     align-items: center;
 }
 
-.menu.fixed {
+.header__menu.fixed {
     position: fixed;
 }
 
-.menu div {
+.header__menu div {
     height: 3px;
     width: 90%;
     background-color: #f5f5f5;
@@ -43,8 +43,8 @@ header {
     -o-transition: .2s;
 }
 
-.menu>div::after,
-.menu>div::before {
+.header__menu>div::after,
+.header__menu>div::before {
     content: '';
     height: 3px;
     width: 100%;
@@ -63,7 +63,7 @@ header {
     -o-transform: translateY(10px);
 }
 
-.menu>div::before {
+.header__menu>div::before {
     transform: translateY(-10px);
     -webkit-transform: translateY(-10px);
     -moz-transform: translateY(-10px);
@@ -71,7 +71,7 @@ header {
     -o-transform: translateY(-10px);
 }
 
-.menu.active>div {
+.header__menu.active>div {
     background-color: #f24343;
     box-shadow: #fa5a5a 0 1px 0;
     transition: .5s;
@@ -86,8 +86,8 @@ header {
     -o-transform: translateY(0) rotate(45deg);
 }
 
-.menu.active>div::after,
-.menu.active>div::before {
+.header__menu.active>div::after,
+.header__menu.active>div::before {
     background-color: #f24343;
     box-shadow: #fa5a5a 0 1px 0;
     transform: translateY(0) rotate(90deg);
@@ -102,15 +102,14 @@ header {
     -o-transition: .5s;
 }
 
-.brandIcon1,
-.brandIcon2 {
+.header__brand-icon {
     position: absolute;
     height: 3.6rem;
     top: 0;
     margin-top: .4rem;
 }
 
-.sideBar {
+.overlay-side-bar {
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -123,12 +122,12 @@ header {
     visibility: hidden;
 }
 
-.sideBar.active {
+.overlay-side-bar.active {
     opacity: 1;
     visibility: visible;
 }
 
-.bar {
+.overlay-side-bar__bar {
     height: 100%;
     width: 50vw;
     padding: 10px;
@@ -141,7 +140,7 @@ header {
     visibility: hidden;
 }
 
-.sideBar.active .bar {
+.overlay-side-bar.active .overlay-side-bar__bar {
     opacity: 1;
     visibility: visible;
     animation: showSideBar 1s cubic-bezier(0.46, 0.03, 0.52, 0.96) .1s forwards;
@@ -153,7 +152,7 @@ header {
     -o-transform: translateX(-15rem);
 }
 
-.socialMedia {
+.social-media {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -161,20 +160,20 @@ header {
     margin-top: 3.5rem;
 }
 
-.socialMedia div {
+.social-media div {
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.socialMedia a {
+.social-media a {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sideBar svg {
+.overlay-side-bar svg {
     height: 30px;
     position: relative;
     transition: .6s;
@@ -189,11 +188,11 @@ header {
     -o-border-radius: 30%;
 }
 
-.linkedin svg {
+.social-media__linkedin svg {
     fill: #358cf0;
 }
 
-.sideBar svg:hover {
+.overlay-side-bar svg:hover {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
@@ -201,17 +200,17 @@ header {
     -o-transform: scale(1.2);
 }
 
-.socialMedia p {
+.social-media p {
     font-size: 1.5rem;
     margin-left: .6rem;
     box-shadow: 0 2px 0 #f3f3f3;
 }
 
-.socialMedia p {
+.social-media p {
     position: relative;
 }
 
-.socialMedia p:hover::after {
+.social-media p:hover::after {
     content: '';
     width: 100%;
     height: 2px;
@@ -226,7 +225,7 @@ header {
     -webkit-animation: 1s forwards ease lineP;
 }
 
-.socialMedia .linkedin p:hover::after {
+.social-media__linkedin p:hover::after {
     transform: translate(-6rem, 2.17rem);
     -webkit-transform: translate(-6rem, 2.17rem);
     -moz-transform: translate(-6rem, 2.17rem);
