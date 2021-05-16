@@ -30,9 +30,8 @@ export const form = {
             this.checkFields();
             cartArray.push(values);
             calculator.updateBalance();
-            overlay.close();
+            overlay.close('form');
         } catch (error) {
-
             this.productsQuantity.style.boxShadow = '0 0 6px #ee2828';
 
             setTimeout(() => {
