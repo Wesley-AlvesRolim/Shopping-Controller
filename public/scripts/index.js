@@ -1,4 +1,4 @@
-import { overlay, sideBar } from './overlay';
+import { cart, overlay, sideBar } from './overlay';
 import { cards } from './cards';
 import { form } from './form';
 import { products } from './data';
@@ -7,28 +7,24 @@ import { initCards } from './cart';
 
 let obj;
 
-
-document.querySelector('.cartIcon').addEventListener('click', () => {
-    document.querySelector('.overlayCart').classList.add('active');
-    document.body.style.overflow = 'hidden';
-
-    document.querySelector('#closeWindow').addEventListener('click', () => {
-        document.querySelector('.overlayCart').classList.remove('active');
-        document.body.style.overflow = 'visible';
+document.querySelector('.header__cart').addEventListener('click', () => {
+    cart.open();
+    document.querySelector('.close-window-icon').addEventListener('click', () => {
+        cart.close();
     });
     initCards();
 });
 
-document.querySelector('div.menu').addEventListener('click', () => {
+document.querySelector('.header__menu').addEventListener('click', () => {
     sideBar.openClose();
 });
 
-document.querySelector('.actions').addEventListener('click', e => {
+document.querySelector('.form-overlay__form__actions').addEventListener('click', e => {
     if (e.target.tagName === 'A') overlay.close();
 });
 
 (function loadCards() {
-    document.querySelector('.sectionCards').innerHTML = '';
+    document.querySelector('.section-cards').innerHTML = '';
     products.forEach(index => { cards.createDiv(index); });
 
     document.querySelectorAll('.card').forEach((element, index) => {

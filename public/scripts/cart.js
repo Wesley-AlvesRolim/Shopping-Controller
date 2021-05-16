@@ -3,14 +3,14 @@ import { utils } from './utils';
 
 export const cartArray = [];
 export function initCards() {
-    const cart = document.querySelector('#cart');
+    const cart = document.querySelector('.cart-overlay__content__cart');
     cart.innerHTML = '';
     if (cartArray.length === 0) {
         cart.innerHTML = 'Suas compras estarão aqui no futuro!';
-        cart.className = 'empty';
+        cart.classList.add('empty');
         return;
     }
-    cart.className = '';
+    cart.classList.remove('empty');
     cartArray.forEach(index => {
         const div = document.createElement('div');
         div.classList.add('card');

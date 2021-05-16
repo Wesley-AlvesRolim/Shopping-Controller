@@ -19,9 +19,9 @@ export const form = {
     },
     clearFields() {
         this.productsQuantity.value = '';
-        document.querySelector('.divImage').innerHTML = '';
-        document.querySelector('.quantity').innerHTML = '0 unidades';
-        document.querySelector('.cost').innerHTML = 'Custo: R$ 0,00';
+        document.querySelector('.form-overlay__form__img').innerHTML = '';
+        document.querySelector('.form-overlay__form__calculation__quantity').innerHTML = '0 unidades';
+        document.querySelector('.form-overlay__form__calculation__cost').innerHTML = 'Custo: R$ 0,00';
     },
     submit(event, obj) {
         event.preventDefault();
