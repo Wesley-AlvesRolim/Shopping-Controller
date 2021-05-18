@@ -140,6 +140,28 @@
     visibility: hidden;
 }
 
+.header__cart {
+    position: relative;
+}
+
+.header__cart.filled::after {
+    content: '';
+    width: .5rem;
+    height: .5rem;
+    background: #ff0000;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transform: translateX(-4px);
+    -webkit-transform: translateX(-4px);
+    -moz-transform: translateX(-4px);
+    -ms-transform: translateX(-4px);
+    -o-transform: translateX(-4px);
+}
+
 .overlay-side-bar.active .overlay-side-bar__bar {
     opacity: 1;
     visibility: visible;
