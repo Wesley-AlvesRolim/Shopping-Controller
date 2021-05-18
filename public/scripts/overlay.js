@@ -5,6 +5,7 @@ export const overlay = {
     cart: document.querySelector('.cart-overlay'),
     sideBar: document.querySelector('.overlay-side-bar'),
     menu: document.querySelector('.header__menu'),
+    body: document.querySelector('body'),
     open(element) {
         if (element === 'form') form.clearFields();
         this[element].classList.add('active');
@@ -13,6 +14,7 @@ export const overlay = {
         this[element].classList.remove('active');
     },
     openClose() {
+        this.body.classList.toggle('menu--active');
         this.menu.classList.toggle('active');
         this.sideBar.classList.toggle('active');
     }
