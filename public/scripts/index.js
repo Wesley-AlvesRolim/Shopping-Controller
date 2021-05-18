@@ -37,5 +37,6 @@ document.querySelector('.form-overlay__form__actions').addEventListener('click',
 })();
 
 document.querySelector('form').addEventListener('submit', e => {
-    form.submit(e, obj);
+    e.preventDefault();
+    form.submit(obj);
 });
