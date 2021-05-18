@@ -4,6 +4,31 @@ import { utils } from './utils';
 export const cartArray = [];
 export function initCards() {
     const cart = document.querySelector('.cart-overlay__content__cart');
+    addingBall();
+    messageInCartContent(cart);
+    addingCards(cart);
+    listeningDelete();
+}
+
+function addingCards(cart) {
+    cartArray.forEach(index => {
+        const div = document.createElement('div');
+        div.classList.add('card');
+        div.innerHTML = innerHtml(index);
+        cart.appendChild(div);
+    });
+}
+
+function addingBall() {
+    const cart = document.querySelector('.header__cart');
+    if (cartArray.length > 0) {
+        cart.classList.add('filled');
+        return;
+    }
+    cart.classList.remove('filled');
+}
+
+function messageInCartContent(cart) {
     cart.innerHTML = '';
     if (cartArray.length === 0) {
         cart.innerHTML = 'Suas compras estarão aqui no futuro!';
@@ -11,13 +36,9 @@ export function initCards() {
         return;
     }
     cart.classList.remove('empty');
-    cartArray.forEach(index => {
-        const div = document.createElement('div');
-        div.classList.add('card');
-        div.innerHTML = innerHtml(index);
-        cart.appendChild(div);
-    });
+}
 
+function listeningDelete() {
     document.querySelectorAll('.delete').forEach((element, index) => {
         element.addEventListener('click', () => {
             cards.deleteOne(index);
