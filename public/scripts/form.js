@@ -1,5 +1,5 @@
 import { calculator } from './calculator';
-import { cartArray } from './cart';
+import { cartArray, initCards } from './cart';
 import { overlay } from './overlay';
 
 export const form = {
@@ -23,13 +23,13 @@ export const form = {
         document.querySelector('.form-overlay__form__calculation__quantity').innerHTML = '0 unidades';
         document.querySelector('.form-overlay__form__calculation__cost').innerHTML = 'Custo: R$ 0,00';
     },
-    submit(event, obj) {
-        event.preventDefault();
+    submit(obj) {
         try {
             const values = {...this.catchValues(), ...obj };
             this.checkFields();
             cartArray.push(values);
             calculator.updateBalance();
+            initCards();
             overlay.close('form');
         } catch (error) {
             this.productsQuantity.style.boxShadow = '0 0 6px #ee2828';
