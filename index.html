@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compras na Submarino</title>
-    <link rel="stylesheet" href="./public/styles/form.css" />
-    <link rel="stylesheet" href="./public/styles/header.css" />
-    <link rel="stylesheet" href="./public/styles/cards.css" />
-    <link rel="stylesheet" href="./public/styles/footer.css" />
-    <link rel="stylesheet" href="./public/styles/cart.css" />
-    <link rel="stylesheet" href="./public/styles/root.css" />
+    <link rel="stylesheet" href="./public/styles/form.css">
+    <link rel="stylesheet" href="./public/styles/header.css">
+    <link rel="stylesheet" href="./public/styles/cards.css">
+    <link rel="stylesheet" href="./public/styles/footer.css">
+    <link rel="stylesheet" href="./public/styles/cart.css">
+    <link rel="stylesheet" href="./public/styles/root.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="https://images-submarino.b2w.io/zion/manifest/icons/940dfc865ba64096399fcb71d51d6d9f.favicon.ico" />
+    <link rel="icon" href="https://images-submarino.b2w.io/zion/manifest/icons/940dfc865ba64096399fcb71d51d6d9f.favicon.ico">
 
 </head>
 
@@ -23,8 +23,8 @@
         <div class="header__menu">
             <div></div>
         </div>
-        <img class="header__brand-icon" src="assets/favicon.svg" alt="Logo" />
-        <div class="header__cart" style="position: absolute; right: 1rem;">
+        <img class="header__brand-icon" src="assets/favicon.svg" alt="Logo">
+        <div class="header__cart">
             <img src="./assets/cartIcon.svg" alt="Carrinho de compras." style="height: 2rem;">
         </div>
     </header>
@@ -66,13 +66,13 @@
     <div class="form-overlay">
         <div>
             <form class="form-overlay__form">
+
                 <div class="form-overlay__form__input-block">
                     <label for="productsQuantity">
                         Serão quantas unidades?
                     </label>
-                    <input type="number" id="productsQuantity" min="1" placeholder="Digite aqui!" />
+                    <input type="number" id="productsQuantity" min="1" placeholder="Digite aqui!">
                 </div>
-
                 <div class="form-overlay__form__img"></div>
                 <div class="form-overlay__form__calculation">
                     <p class="form-overlay__form__calculation__quantity">0 Unidades</p>
@@ -96,7 +96,7 @@
                 <p class="counting-products">0 produtos</p>
                 <p class="total">Total: R$0,00</p>
             </div>
-            <div class="cart-overlay__content__cart"></div>
+            <p class="cart-overlay__content__cart"></p>
         </div>
     </div>
     <script src="./public/bundle.js"></script>
