@@ -46,6 +46,10 @@ body {
     height: 100vh;
 }
 
+body.menu--active {
+    position: fixed;
+}
+
 
 /* main */
 
