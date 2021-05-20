@@ -4,14 +4,15 @@
     "description": "Shopping controller",
     "main": "index.js",
     "scripts": {
-        "build": "webpack -w"
+        "build:webpack": "webpack -w",
+        "build:sass": "node-sass --output-style compressed public/Scss/main.scss public/style.css -w"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Wesley-AlvesRolim/Shopping-Controller.git"
     },
     "keywords": [],
-    "author": "",
+    "author": "Wesley",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/Wesley-AlvesRolim/Shopping-Controller/issues"
@@ -21,6 +22,7 @@
         "eslint": "^7.25.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-plugin-import": "^2.22.1",
+        "node-sass": "4.13",
         "webpack": "^5.36.2",
         "webpack-cli": "^4.7.0"
     }
