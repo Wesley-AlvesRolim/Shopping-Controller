@@ -1,0 +1,118 @@
+.header {
+    width: 100%;
+    height: 3rem;
+    background: $primary-blue;
+    padding: 2.2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__menu {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 4px;
+        left: calc(0px + 1.5rem);
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.active {
+            border: 1px solid #000000;
+            div {
+                background-color: $primary-red;
+                box-shadow: $secondary-red 0 1px 0;
+                transition: .5s;
+                -webkit-transition: .5s;
+                -moz-transition: .5s;
+                -ms-transition: .5s;
+                -o-transition: .5s;
+                transform: translateY(0) rotate(45deg);
+                -webkit-transform: translateY(0) rotate(45deg);
+                -moz-transform: translateY(0) rotate(45deg);
+                -ms-transform: translateY(0) rotate(45deg);
+                -o-transform: translateY(0) rotate(45deg);
+            }
+            div::after,
+            div::before {
+                background-color: $primary-red;
+                box-shadow: $secondary-red 0 1px 0;
+                transform: translateY(0) rotate(90deg);
+                -webkit-transform: translateY(0) rotate(90deg);
+                -moz-transform: translateY(0) rotate(90deg);
+                -ms-transform: translateY(0) rotate(90deg);
+                -o-transform: translateY(0) rotate(90deg);
+                transition: .5s;
+                -webkit-transition: .5s;
+                -moz-transition: .5s;
+                -ms-transition: .5s;
+                -o-transition: .5s;
+            }
+        }
+        div {
+            height: 3px;
+            width: 90%;
+            background-color: $secondary-white;
+            position: relative;
+            box-shadow: $secondary-gray 0 1px 0;
+            border-radius: 15%;
+            -webkit-border-radius: 15%;
+            -moz-border-radius: 15%;
+            -ms-border-radius: 15%;
+            -o-border-radius: 15%;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+            -ms-transition: .2s;
+            -o-transition: .2s;
+            &::after,
+            &::before {
+                content: '';
+                height: 3px;
+                width: 100%;
+                position: absolute;
+                background-color: $secondary-white;
+                box-shadow: $secondary-gray 0 1px 0;
+                border-radius: 15%;
+                -webkit-border-radius: 15%;
+                -moz-border-radius: 15%;
+                -ms-border-radius: 15%;
+                -o-border-radius: 15%;
+                transform: translateY(10px);
+                -webkit-transform: translateY(10px);
+                -moz-transform: translateY(10px);
+                -ms-transform: translateY(10px);
+                -o-transform: translateY(10px);
+            }
+            &::before {
+                transform: translateY(-10px);
+                -webkit-transform: translateY(-10px);
+                -moz-transform: translateY(-10px);
+                -ms-transform: translateY(-10px);
+                -o-transform: translateY(-10px);
+            }
+        }
+    }
+    &__brand-icon {
+        height: 3.6rem;
+        margin-top: .4rem;
+    }
+    &__cart {
+        position: relative;
+        &.filled::after {
+            content: '';
+            width: .5rem;
+            height: .5rem;
+            background: $primary-red;
+            position: absolute;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            transform: translateX(-4px);
+            -webkit-transform: translateX(-4px);
+            -moz-transform: translateX(-4px);
+            -ms-transform: translateX(-4px);
+            -o-transform: translateX(-4px);
+        }
+    }
+}
