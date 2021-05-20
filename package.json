@@ -4,14 +4,15 @@
     "description": "Shopping controller",
     "main": "index.js",
     "scripts": {
-        "build": "webpack -w"
+        "build:webpack": "webpack -w",
+        "build:sass": "node-sass --output-style compressed public/Scss/main.scss public/style.css -w"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Wesley-AlvesRolim/Shopping-Controller.git"
     },
     "keywords": [],
-    "author": "",
+    "author": "Wesley",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/Wesley-AlvesRolim/Shopping-Controller/issues"
