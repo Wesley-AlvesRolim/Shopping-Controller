@@ -11,10 +11,11 @@ export function initCards() {
 }
 
 function addingCards(cart) {
-    cartArray.forEach(index => {
+    cartArray.forEach((element, index) => {
         const div = document.createElement('div');
         div.classList.add('card');
-        div.innerHTML = innerHtml(index);
+        div.innerHTML = innerHtml(element);
+        div.style = '--x:' + (index * .2) + 's';
         cart.appendChild(div);
     });
 }
