@@ -24,7 +24,7 @@ document.querySelector('.form-overlay__form__actions').addEventListener('click',
 
 (function loadCards() {
     document.querySelector('.section-cards').innerHTML = '';
-    products.forEach(index => { cards.createDiv(index); });
+    products.forEach((element, index) => { cards.createDiv(element, index); });
 
     document.querySelectorAll('.card').forEach((element, index) => {
         const { value, image } = products[index];
