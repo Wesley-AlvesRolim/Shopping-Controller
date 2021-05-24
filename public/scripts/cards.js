@@ -14,13 +14,14 @@ export const cards = {
         cartArray.splice(0);
         initCards();
     },
-    createDiv(index) {
+    createDiv(element, index) {
         const sectionCards = document.querySelector('.section-cards');
         const div = document.createElement('div');
         sectionCards.removeAttribute('style');
         sectionCards.appendChild(div);
         div.classList.add('card');
-        div.innerHTML = innerHtml(index);
+        div.style = '--x:' + (index * .2) + 's';
+        div.innerHTML = innerHtml(element);
     }
 };
 
