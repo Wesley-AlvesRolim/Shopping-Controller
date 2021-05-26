@@ -81,6 +81,7 @@
             & .card {
                 height: 15rem;
                 width: 8.5rem;
+                position: relative;
                 img {
                     height: 40%;
                 }
@@ -88,7 +89,8 @@
                     width: 1.4rem;
                     max-height: 25px;
                     position: absolute;
-                    margin-left: 2.5rem;
+                    top: 2px;
+                    right: 1px;
                     opacity: 0;
                     visibility: hidden;
                     transform: scale(0);
