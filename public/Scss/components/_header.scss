@@ -63,6 +63,7 @@
             -moz-transition: .2s;
             -ms-transition: .2s;
             -o-transition: .2s;
+            animation: animationMenu .9s backwards;
             &::after,
             &::before {
                 content: '';
@@ -81,6 +82,8 @@
                 -moz-transform: translateY(10px);
                 -ms-transform: translateY(10px);
                 -o-transform: translateY(10px);
+                animation: animationMenuAfter .3s backwards;
+                animation-delay: 1.5s;
             }
             &::before {
                 transform: translateY(-10px);
@@ -88,6 +91,8 @@
                 -moz-transform: translateY(-10px);
                 -ms-transform: translateY(-10px);
                 -o-transform: translateY(-10px);
+                animation: animationMenuBefore .4s backwards;
+                animation-delay: 1s;
             }
         }
     }
@@ -114,5 +119,32 @@
             -ms-transform: translateX(-4px);
             -o-transform: translateX(-4px);
         }
+    }
+}
+
+@keyframes animationMenuBefore {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes animationMenu {
+    0% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes animationMenuAfter {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(10px);
     }
 }
