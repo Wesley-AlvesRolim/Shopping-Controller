@@ -18,11 +18,8 @@
 <p>This application assists in your expenses like the shopping cart.</p>
 
 <br>
-<img src="./assets/README.gif" alt="Readme Gif">
+<img src="./assets/Readme.gif" alt="Readme Gif">
 <br>
-<br>
-<span>To go into the app click</span>
-  <a href="https://wesley-shopping-controller.netlify.app"><strong>here</strong></a>
 <br>
 
 
