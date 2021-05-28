@@ -18,7 +18,7 @@
 <p>This application assists in your expenses like the shopping cart.</p>
 
 <br>
-<img src="./assets/Readme.gif" alt="Readme Gif">
+<img src="./assets/my readme.gif" alt="Readme Gif">
 <br>
 <br>
 
