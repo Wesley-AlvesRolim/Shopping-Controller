@@ -2,8 +2,9 @@
 
 <br>
 <p align="center">
-  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-technologies">Technologies</a>
+  <a href="##-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="##-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="##-technologies">Technologies</a>
 </p>
 
 <br>
@@ -21,6 +22,25 @@
 <img src="./assets/my readme.gif" alt="Readme Gif">
 <br>
 <br>
+
+
+## Installation
+
+- Important: You must have installed the node.js
+
+```bash
+# clone it
+$ git clone https://github.com/Wesley-AlvesRolim/Shopping-Controller.git
+
+# Install dependencies
+$ npm install
+
+# Running scripts
+$ npm run build:webpack
+$ npm run build:sass
+$ npm start
+```
+- And enter in your browser using https://localhost:3000
 
 
 ## 🚀 Technologies
