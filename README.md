@@ -40,7 +40,7 @@ $ npm run build:webpack
 $ npm run build:sass
 $ npm start
 ```
-- And enter in your browser using https://localhost:3000
+- And enter in your browser using http://localhost:3000
 
 
 ## 🚀 Technologies
