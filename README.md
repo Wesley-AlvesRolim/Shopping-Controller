@@ -26,7 +26,7 @@
 
 ## Installation
 
-- Important: You must have installed the node.js
+- Important: You must have installed the Node.js and Git
 
 ```bash
 # clone it
