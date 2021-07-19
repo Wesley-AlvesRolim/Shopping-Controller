@@ -2,9 +2,9 @@
 
 <br>
 <p align="center">
-  <a href="##-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="##-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="##-technologies">Technologies</a>
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>
 </p>
 
 <br>
@@ -26,7 +26,7 @@
 
 ## Installation
 
-- Important: You must have installed the node.js
+- Important: You must have installed the Node.js and Git
 
 ```bash
 # clone it
@@ -40,7 +40,7 @@ $ npm run build:webpack
 $ npm run build:sass
 $ npm start
 ```
-- And enter in your browser using https://localhost:3000
+- And enter in your browser using http://localhost:3000
 
 
 ## 🚀 Technologies
