@@ -1,5 +1,5 @@
 body {
-    background: $primary-gray;
+    background: var(--background-two);
     width: 100%;
     height: 100vh;
     &.menu--active {

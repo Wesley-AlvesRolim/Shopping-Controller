@@ -1,7 +1,7 @@
 .cart-overlay {
     width: 100vw;
     height: 100vh;
-    background-color: $overlay-color;
+    background-color: var(--overlay-color);
     position: fixed;
     top: 0px;
     z-index: 5;
@@ -19,7 +19,7 @@
         width: 100%;
         max-height: 80vh;
         max-width: 95vw;
-        background: $secondary-white;
+        background: var(--background-two);
         padding: 1.5rem 1rem;
         border-radius: 1rem;
         -webkit-border-radius: 1rem;

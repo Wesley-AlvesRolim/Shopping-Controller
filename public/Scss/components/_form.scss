@@ -1,7 +1,7 @@
 .form-overlay {
     width: 100vw;
     height: 100vh;
-    background-color: $overlay-color;
+    background-color: var(--overlay-color);
     position: fixed;
     top: 0px;
     z-index: 5;
@@ -24,7 +24,7 @@
     }
     &__form {
         max-width: 80vw;
-        background: $secondary-white;
+        background: var(--background-two);
         padding: 1.6rem;
         border-radius: 1rem;
         -webkit-border-radius: 1rem;
@@ -51,7 +51,7 @@
             img {
                 height: 8rem;
                 margin-top: .2rem;
-                box-shadow: 0 2px 1px $secondary-gray;
+                box-shadow: 0 2px 1px var(--shadow);
                 transition: .5s;
                 -webkit-transition: .5s;
                 -moz-transition: .5s;
@@ -91,7 +91,7 @@
                 margin-right: 10px;
                 text-align: center;
                 text-decoration: none;
-                border: solid #fa3030;
+                border: solid $lightest-red;
                 border-radius: 8px;
                 -webkit-border-radius: 8px;
                 -moz-border-radius: 8px;

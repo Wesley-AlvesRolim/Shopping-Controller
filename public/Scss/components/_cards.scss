@@ -5,20 +5,20 @@
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(2, 10rem);
-    grid-gap: .6rem;
+    grid-gap: 0.6rem;
 }
 
 .card {
     height: 12rem;
-    background: $primary-white;
-    padding: .5rem;
+    background: var(--background-one);
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 0 2px 1px $secondary-gray;
-    transition: .5s;
+    box-shadow: 0 2px 1px var(--shadow);
+    transition: 0.5s;
     animation: 1s ease-in-out backwards showCards;
     animation-delay: var(--x);
     & img {

@@ -50,9 +50,9 @@
         div {
             height: 3px;
             width: 90%;
-            background-color: $secondary-white;
+            background-color: var(--background-two);
             position: relative;
-            box-shadow: $secondary-gray 0 1px 0;
+            box-shadow: var(--shadow) 0 1px 0;
             border-radius: 15%;
             -webkit-border-radius: 15%;
             -moz-border-radius: 15%;
@@ -70,8 +70,8 @@
                 height: 3px;
                 width: 100%;
                 position: absolute;
-                background-color: $secondary-white;
-                box-shadow: $secondary-gray 0 1px 0;
+                background-color: var(--background-two);
+                box-shadow: var(--shadow) 0 1px 0;
                 border-radius: 15%;
                 -webkit-border-radius: 15%;
                 -moz-border-radius: 15%;

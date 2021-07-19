@@ -3,7 +3,7 @@
     width: 100vw;
     position: fixed;
     top: 0px;
-    background-color: $overlay-color;
+    background-color: var(--overlay-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -28,8 +28,8 @@
         height: 100%;
         width: 50vw;
         padding: 10px;
-        background-color: $primary-white;
-        border: .4rem solid $primary-gray;
+        background-color: var(--background-one);
+        border: .4rem solid var(--border-gray);
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -65,7 +65,7 @@
             p {
                 font-size: 1.5rem;
                 margin-left: .6rem;
-                box-shadow: 0 2px 0 $secondary-white;
+                box-shadow: 0 2px 0 var(--background-two);
                 position: relative;
                 &:hover::after {
                     content: '';
