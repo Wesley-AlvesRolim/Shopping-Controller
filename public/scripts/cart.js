@@ -48,13 +48,13 @@ function listeningDelete() {
 }
 
 function innerHtml(index) {
-    const { productName, value, image, productsQuantity } = index;
+    const { productName, value, productsQuantity } = index;
     const checkName = productsQuantity > 1 ? 'unidades' : 'unidade';
     const content = `
             <a href="#" class="delete">
                 <img src = "./assets/trash.svg" alt = "Trash" class= "trash" >
             </a >
-            <img src="${image}" alt="${productName}">
+            <img src="./public/images/${productName}.jpg" alt="${productName}">
             <p>${productName}</p>
             <p>${productsQuantity} ${checkName} por ${utils.formatPrice(value * productsQuantity,)}</p>`;
     return content;
