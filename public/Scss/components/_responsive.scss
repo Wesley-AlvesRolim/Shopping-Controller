@@ -20,7 +20,7 @@
 @media (min-width: 700px) {
     .overlay-side-bar__bar {
         max-width: 25vw;
-        border: .2rem solid $primary-gray;
+        border-width: .2rem;
     }
     .section-cards {
         grid-template-columns: repeat(4, 10rem);
@@ -50,7 +50,7 @@
 @media (min-width: 800px) {
     .overlay-side-bar__bar {
         max-width: 20vw;
-        border: .4rem solid $primary-gray;
+        border-width: .4rem;
     }
     form {
         max-width: 35vw;
