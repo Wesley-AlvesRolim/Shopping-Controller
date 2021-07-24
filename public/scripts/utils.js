@@ -7,3 +7,7 @@ export const utils = {
         return converted;
     },
 };
+
+export function stock(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+};
