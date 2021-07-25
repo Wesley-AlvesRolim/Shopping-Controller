@@ -21,6 +21,22 @@
     transition: 0.5s;
     animation: 1s ease-in-out backwards showCards;
     animation-delay: var(--x);
+    &.empty {
+        position: relative;
+        img {
+            filter: grayscale(1);
+        }
+        &::before {
+            content: "Esgotado";
+            font-size: 1.5em;
+            color: white;
+            background: #3c3c3c80;
+            position: absolute;
+            top: 25%;
+            transform: rotate(-30deg);
+            z-index: 1;
+        }
+    }
     & img {
         height: 6rem;
     }
