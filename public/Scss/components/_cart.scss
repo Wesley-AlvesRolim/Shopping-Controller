@@ -82,12 +82,10 @@
                 height: 15rem;
                 width: 8.5rem;
                 position: relative;
-                img {
-                    height: 40%;
-                }
                 .trash {
                     width: 1.4rem;
                     max-height: 25px;
+                    fill: var(--text-color);
                     position: absolute;
                     top: 2px;
                     right: 1px;
