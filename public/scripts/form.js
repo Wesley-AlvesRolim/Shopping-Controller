@@ -1,6 +1,7 @@
 import { calculator } from './calculator';
 import { cartArray, initCards } from './cart';
 import { overlay } from './overlay';
+import { decreaseStock } from './utils';
 
 export const form = {
     productsQuantity: document.getElementById('productsQuantity'),
@@ -31,6 +32,7 @@ export const form = {
             calculator.updateBalance();
             initCards();
             overlay.close('form');
+            decreaseStock(obj, values.productsQuantity);
         } catch (error) {
             this.productsQuantity.style.boxShadow = '0 0 6px #ee2828';
 
