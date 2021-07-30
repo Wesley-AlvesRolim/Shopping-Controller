@@ -22,6 +22,14 @@ export const cards = {
         div.classList.add('card');
         div.style = '--x:' + (index * .2) + 's';
         div.innerHTML = innerHtml(element);
+    },
+    stockZero(position) {
+        const cardProduct = document.querySelector('.section-cards .card:nth-child(' + (position + 1) + ')');
+        cardProduct.classList.add('empty');
+    },
+    stockExist(position) {
+        const cardProduct = document.querySelector('.section-cards .card:nth-child(' + (position +  1) + ')');
+        cardProduct.classList.remove('empty');
     }
 };
 
