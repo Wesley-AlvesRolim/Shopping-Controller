@@ -1,11 +1,19 @@
 import { form } from './form';
+import { products } from './data';
 import { utils } from './utils';
+import { overlay } from './overlay';
 
-export function openedForm(value, image) {
+export function openedForm(obj) {
+    const selectedProduct = products.indexOf(obj);
+    const { value, productName, stock } = products[selectedProduct];
     const cost = document.querySelector('.form-overlay__form__calculation__cost');
     cost.innerHTML = `Custo: ${utils.formatPrice(0)}`;
-    createImg(image);
-    focus(value);
+
+    if (stock <= 0) return;
+
+    overlay.open('form');
+    createImg(productName);
+    focus(value, stock);
 }
 
 function createImg(imageLink) {
