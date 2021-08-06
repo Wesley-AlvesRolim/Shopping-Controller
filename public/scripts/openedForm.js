@@ -16,13 +16,13 @@ export function openedForm(obj) {
     focus(value, stock);
 }
 
-function createImg(imageLink) {
+function createImg(productName) {
     const divImage = document.querySelector('.form-overlay__form__img');
     const img = document.createElement('img');
     divImage.appendChild(img);
 
-    img.classList.add('img');
-    img.setAttribute('src', imageLink);
+    img.className = 'img';
+    img.src = '/public/images/' + productName + '.jpg';
 }
 
 function focus(value, stock = 100) {
