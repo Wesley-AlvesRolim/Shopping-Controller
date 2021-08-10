@@ -13,7 +13,18 @@ export function openedForm(obj) {
 
     overlay.open('form');
     createImg(productName);
+    showStockNumber(stock);
     focus(value, stock);
+}
+
+function createImg(productName) {
+function showStockNumber(stock) {
+    const input = document.querySelector('input[type="number"]');
+    let p = document.querySelector('.stock');
+    if (!p) p = document.createElement('p');
+    p.className = 'stock';
+    p.innerText = 'Estoque: ' + stock;
+    input.parentElement.insertAdjacentElement('afterend', p);
 }
 
 function createImg(productName) {
