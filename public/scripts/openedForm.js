@@ -36,24 +36,32 @@ function createImg(productName) {
     img.src = '/public/images/' + productName + '.jpg';
 }
 
-function focus(value, stock = 100) {
-    const cost = document.querySelector('.form-overlay__form__calculation__cost');
-    const quantity = document.querySelector('.form-overlay__form__calculation__quantity');
-
+function focus(value, stock) {
     document.querySelector('input[type="number"]').addEventListener('focus', () => {
-        form.productsQuantity.oninput = function() {
+        form.productsQuantity.oninput = function () {
             if (form.catchValues().productsQuantity >= stock) Number(form.productsQuantity.value = stock);
-
-            const checkName = form.catchValues().productsQuantity > 1 ? ' Unidades' : ' Unidade';
-            const costValue = value * form.catchValues().productsQuantity;
-
-            if (form.catchValues().productsQuantity <= 0) {
-                cost.innerHTML = 'Custo: ' + utils.formatPrice(costValue);
-                quantity.innerHTML = 0 + checkName;
-                return;
-            }
-            cost.innerHTML = 'Custo: ' + utils.formatPrice(costValue);
-            quantity.innerHTML = form.catchValues().productsQuantity + checkName;
+            changingHTMLValues(value, stock);
         };
     });
+}
+
+function changingHTMLValues(value, stock) {
+    const cost = document.querySelector('.form-overlay__form__calculation__cost');
+    const quantity = document.querySelector('.form-overlay__form__calculation__quantity');
+    const stockElement = document.querySelector('.stock');
+    const { productsQuantity } = form.catchValues();
+
+    const checkName = productsQuantity > 1 ? ' Unidades' : ' Unidade';
+    const costValue = value * productsQuantity;
+    const stockQuantity = stock - productsQuantity;
+
+    if (productsQuantity <= 0) {
+        cost.innerHTML = 'Custo: ' + utils.formatPrice(costValue);
+        quantity.innerHTML = 0 + checkName;
+        stockElement.innerHTML = 'Estoque: ' + stock;
+        return;
+    }
+    cost.innerHTML = 'Custo: ' + utils.formatPrice(costValue);
+    quantity.innerHTML = productsQuantity + checkName;
+    stockElement.innerHTML = 'Estoque: ' + stockQuantity;
 }
