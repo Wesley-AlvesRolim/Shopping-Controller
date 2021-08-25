@@ -14,3 +14,14 @@ $secondary-red: #b83014;
 $primary-blue-fixed: #3560eb;
 $primary-black: #020205;
 $blue-gradient: linear-gradient(90deg, #4d79ff 40%, #15a0fd 100%);
+
+@mixin dark-theme-variables {
+    --background-one: #2d2d2d;
+    --background-two: #232323;
+    --background-three: #262626;
+    --shadow: #414141;
+    --border-gray: #353535;
+    --text-color: #ffffff;
+    --overlay-color: #00000062;
+    --primary-blue: #00289e;
+}
