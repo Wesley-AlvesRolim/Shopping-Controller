@@ -18,8 +18,8 @@ document.querySelector('.header__menu').addEventListener('click', () => {
     overlay.openClose();
 });
 
-document.querySelector('.form-overlay__form__actions').addEventListener('click', e => {
-    if (e.target.tagName === 'A') overlay.close('form');
+document.querySelector('.form-overlay__form__header img').addEventListener('click', e => {
+    overlay.close('form');
 });
 
 (function loadCards() {

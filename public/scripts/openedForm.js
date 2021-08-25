@@ -18,7 +18,6 @@ export function openedForm(obj) {
     moreLessButtons(value, stock);
 }
 
-function createImg(productName) {
 function showStockNumber(stock) {
     const input = document.querySelector('input[type="number"]');
     let p = document.querySelector('.stock');
