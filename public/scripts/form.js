@@ -26,7 +26,7 @@ export const form = {
     },
     submit(obj) {
         try {
-            const values = {...this.catchValues(), ...obj };
+            const values = { ...this.catchValues(), ...obj };
             this.checkFields();
             cartArray.push(values);
             calculator.updateBalance();
@@ -34,12 +34,15 @@ export const form = {
             overlay.close('form');
             decreaseStock(obj, values.productsQuantity);
         } catch (error) {
-            this.productsQuantity.style.boxShadow = '0 0 6px #ee2828';
+            const screenHeight = window.screen.height;
+            const scrollY = window.scrollY;
 
+            this.productsQuantity.style.boxShadow = '0 0 6px #ee2828';
             setTimeout(() => {
                 const div = document.body.appendChild(document.createElement('div'));
                 div.appendChild(document.createElement('div')).innerHTML = 'Por favor insira valores válidos nos campos';
                 div.className = 'errorMenssage';
+                div.style.top = ((screenHeight * 0.25) + scrollY) + 'px';
                 setTimeout(() => { div.classList.add('on'); }, 100);
             }, 100);
 
@@ -51,6 +54,7 @@ export const form = {
                 document.querySelector('.errorMenssage').classList.remove('on');
                 setTimeout(() => {
                     document.querySelector('.errorMenssage').remove();
+                    this.productsQuantity.style.boxShadow = 'none';
                 }, 1000);
             }, 4000);
         }
