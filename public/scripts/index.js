@@ -4,6 +4,7 @@ import { form } from './form';
 import { products } from './data';
 import { openedForm } from './openedForm';
 import { initCards } from './cart';
+import { listeningEventsToDarkTheme } from './dark-theme';
 
 let obj;
 document.querySelector('.header__cart').addEventListener('click', () => {
@@ -33,6 +34,8 @@ document.querySelector('.form-overlay__form__header img').addEventListener('clic
         });
     });
 })();
+
+listeningEventsToDarkTheme();
 
 document.querySelector('form').addEventListener('submit', e => {
     e.preventDefault();
