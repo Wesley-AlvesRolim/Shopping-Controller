@@ -15,6 +15,7 @@ export function openedForm(obj) {
     createImg(productName);
     showStockNumber(stock);
     focus(value, stock);
+    moreLessButtons(value, stock);
 }
 
 function createImg(productName) {
@@ -64,4 +65,21 @@ function changingHTMLValues(value, stock) {
     cost.innerHTML = 'Custo: ' + utils.formatPrice(costValue);
     quantity.innerHTML = productsQuantity + checkName;
     stockElement.innerHTML = 'Estoque: ' + stockQuantity;
+}
+
+
+function moreLessButtons(value, stock) {
+    const more = document.querySelector('.more');
+    const less = document.querySelector('.less');
+    const productsQuantity = form.productsQuantity;
+    more.onclick = function () {
+        if (productsQuantity.value >= stock) return;
+        productsQuantity.value = Number(productsQuantity.value) + 1;
+        changingHTMLValues(value, stock);
+    };
+    less.onclick = function () {
+        if (productsQuantity.value <= 0) return;
+        productsQuantity.value = Number(productsQuantity.value) - 1;
+        changingHTMLValues(value, stock);
+    };
 }
