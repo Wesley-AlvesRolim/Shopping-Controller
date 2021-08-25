@@ -32,6 +32,8 @@
 # clone it
 $ git clone https://github.com/Wesley-AlvesRolim/Shopping-Controller.git
 
+$ cd Shopping-Controller/
+
 # Install dependencies
 $ npm install
 
