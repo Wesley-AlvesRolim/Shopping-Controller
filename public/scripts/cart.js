@@ -1,5 +1,6 @@
 import { cards } from './cards';
-import { utils } from './utils';
+import { products } from './data';
+import { utils, increaseStock } from './utils';
 
 export const cartArray = [];
 export function initCards() {
@@ -42,6 +43,12 @@ function messageInCartContent(cart) {
 function listeningDelete() {
     document.querySelectorAll('.delete').forEach((element, index) => {
         element.addEventListener('click', () => {
+            const productInCart = cartArray[index];
+            const productNameInCart = productInCart.productName;
+
+            products.forEach((product, index) => {
+                if (product.productName === productNameInCart) increaseStock(productInCart, index);
+            });
             cards.deleteOne(index);
         });
     });
