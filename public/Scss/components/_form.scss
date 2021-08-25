@@ -11,7 +11,7 @@
         visibility: visible;
         opacity: 1;
     }
-    >div {
+    > div {
         width: 100%;
         height: 100%;
         display: flex;
@@ -31,16 +31,18 @@
         -moz-border-radius: 1rem;
         -ms-border-radius: 1rem;
         -o-border-radius: 1rem;
-        &__input-block {
-            margin-bottom: 6px;
-            input {
-                width: 100%;
-                padding: 0 .4rem;
-                font-size: 110%;
-                &::-webkit-inner-spin-button,
-                &::-webkit-outer-spin-button {
-                    appearance: none;
-                    margin: 0;
+        &__header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                width: 45px;
+                filter: drop-shadow(1px 1px 1px black);
+                transition: 0.5s;
+                &:hover {
+                    filter: none;
+                    cursor: pointer;
                 }
             }
         }
@@ -50,13 +52,14 @@
             text-align: center;
             img {
                 height: 8rem;
-                margin-top: .2rem;
+                margin: 0.5rem 0;
+                background: var(--background-one);
                 box-shadow: 0 2px 1px var(--shadow);
-                transition: .5s;
-                -webkit-transition: .5s;
-                -moz-transition: .5s;
-                -ms-transition: .5s;
-                -o-transition: .5s;
+                transition: 0.5s;
+                -webkit-transition: 0.5s;
+                -moz-transition: 0.5s;
+                -ms-transition: 0.5s;
+                -o-transition: 0.5s;
                 &:hover {
                     box-shadow: 0 1px 4px #000000;
                     transform: scale(1.1);
@@ -67,16 +70,54 @@
                 }
             }
         }
+        &__input-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .less,
+            .more {
+                width: 25px;
+                height: 25px;
+                position: relative;
+                background: $primary-blue-fixed;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                user-select: none;
+                box-shadow: 2px 2px 0px #4c79ff;
+                transition: 0.25s;
+                &:active {
+                    box-shadow: none;
+                }
+            }
+            input {
+                width: 85%;
+                margin: 0 5px;
+                padding: 0 0.4rem;
+                font-size: 110%;
+                &::-webkit-inner-spin-button,
+                &::-webkit-outer-spin-button {
+                    appearance: none;
+                    margin: 0;
+                }
+            }
+        }
+        .stock {
+            padding: 0.5em;
+            font-size: 0.8rem;
+            color: #bbb;
+        }
         &__calculation {
             max-width: 80vw;
-            margin: 1rem 0 .5rem;
+            margin-bottom: 0.5rem;
             display: flex;
             flex-direction: row-reverse;
             flex-wrap: wrap-reverse;
             justify-content: space-between;
             align-items: center;
             &__quantity {
-                margin-left: .4rem;
+                margin-left: 0.4rem;
             }
         }
         &__actions {
@@ -85,37 +126,11 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            a {
-                width: calc(50% - 10px);
-                padding: 1px 0;
-                margin-right: 10px;
-                text-align: center;
-                text-decoration: none;
-                border: solid $lightest-red;
-                border-radius: 8px;
-                -webkit-border-radius: 8px;
-                -moz-border-radius: 8px;
-                -ms-border-radius: 8px;
-                -o-border-radius: 8px;
-                transition: 0.5s;
-                -webkit-transition: 0.5s;
-                -moz-transition: 0.5s;
-                -ms-transition: 0.5s;
-                -o-transition: 0.5s;
-                &:hover {
-                    background-color: $primary-red;
-                    transform: scale(1.05);
-                    -webkit-transform: scale(1.05);
-                    -moz-transform: scale(1.05);
-                    -ms-transform: scale(1.05);
-                    -o-transform: scale(1.05);
-                }
-            }
             button {
-                width: calc(50% - 10px);
+                width: 70%;
                 padding: 4px 0;
                 background-image: $blue-gradient;
-                opacity: .8;
+                opacity: 0.8;
                 border-radius: 8px;
                 -webkit-border-radius: 8px;
                 -moz-border-radius: 8px;
@@ -143,18 +158,17 @@
 .errorMenssage {
     width: 100%;
     position: absolute;
-    top: 8rem;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     text-align: center;
     z-index: 5;
-    transition: .8s;
-    -webkit-transition: .8s;
-    -moz-transition: .8s;
-    -ms-transition: .8s;
-    -o-transition: .8s;
+    transition: 0.8s;
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -ms-transition: 0.8s;
+    -o-transition: 0.8s;
     transform: scale(0);
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
@@ -174,8 +188,8 @@
     -o-transform: scale(1);
 }
 
-.errorMenssage>div,
-.errorMenssage.on>div {
+.errorMenssage > div,
+.errorMenssage.on > div {
     width: 90vw;
     background-color: $primary-red;
     padding: 1rem;
