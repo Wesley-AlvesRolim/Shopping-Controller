@@ -70,20 +70,24 @@
         <div>
             <form class="form-overlay__form">
 
-                <div class="form-overlay__form__input-block">
+                <div class="form-overlay__form__header">
                     <label for="productsQuantity">
                         Serão quantas unidades?
                     </label>
-                    <input type="number" id="productsQuantity" min="1" placeholder="Digite aqui!">
+                    <img src="./assets/closeWindow.svg" alt="Fechar a janela.">
                 </div>
                 <div class="form-overlay__form__img"></div>
                 <div class="form-overlay__form__calculation">
                     <p class="form-overlay__form__calculation__quantity">0 Unidades</p>
                     <p class="form-overlay__form__calculation__cost">Custo: R$ 0,00</p>
                 </div>
+                <div class="form-overlay__form__input-block">
+                    <div class="less">-</div>
+                    <input type="number" id="productsQuantity" min="1" placeholder="Digite aqui!">
+                    <div class="more">+</div>
+                </div>
                 <div class="form-overlay__form__actions">
-                    <a href="#">Sair</a>
-                    <button>Enviar</button>
+                    <button>Adicionar ao carrinho</button>
                 </div>
             </form>
         </div>
