@@ -24,16 +24,35 @@ export const form = {
         document.querySelector('.form-overlay__form__calculation__quantity').innerHTML = '0 unidades';
         document.querySelector('.form-overlay__form__calculation__cost').innerHTML = 'Custo: R$ 0,00';
     },
+
+    pushToCart(values) {
+        let [productAlreadyExist, indexInCart] = [false, -1];
+        cartArray.forEach(({ productName }, index) => {
+            if (productName === values.productName) {
+                productAlreadyExist = true
+                indexInCart = index;
+            };
+        });
+
+        if (productAlreadyExist) {
+            const productBought = cartArray[indexInCart];
+            productBought.productsQuantity += values.productsQuantity;
+            return;
+        }
+        cartArray.push(values)
+    },
+
     submit(obj) {
         try {
             const values = { ...this.catchValues(), ...obj };
             this.checkFields();
-            cartArray.push(values);
+            this.pushToCart(values);
             calculator.updateBalance();
             initCards();
             overlay.close('form');
             decreaseStock(obj, values.productsQuantity);
         } catch (error) {
+            console.log(error)
             const screenHeight = window.screen.height;
             const scrollY = window.scrollY;
 
