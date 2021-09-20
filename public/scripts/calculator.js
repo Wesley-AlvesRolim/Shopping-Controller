@@ -23,7 +23,7 @@ export const calculator = {
     },
     updateBalance() {
         const sum = this.sumQuantity();
-        const price = calculator.sumPrice();
+        const price = this.sumPrice();
         this.countingProducts.innerHTML = `${sum} produtos`;
         this.totalHtml.innerHTML = `Total: ${utils.formatPrice(price)}`;
     },
