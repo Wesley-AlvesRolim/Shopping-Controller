@@ -66,6 +66,11 @@ function changingHTMLValues(value, stock) {
     stockElement.innerHTML = 'Estoque: ' + stockQuantity;
 }
 
+function setDefaultValue(value, stock) {
+    const productsQuantity = form.productsQuantity;
+    productsQuantity.value = 1;
+    changingHTMLValues(value, stock);
+}
 
 function moreLessButtons(value, stock) {
     const more = document.querySelector('.more');
