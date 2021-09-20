@@ -16,6 +16,7 @@ export function openedForm(obj) {
     showStockNumber(stock);
     focus(value, stock);
     moreLessButtons(value, stock);
+    setDefaultValue(value, stock);
 }
 
 function showStockNumber(stock) {
