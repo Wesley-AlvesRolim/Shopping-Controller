@@ -73,8 +73,8 @@ function setDefaultValue(value, stock) {
 }
 
 function moreLessButtons(value, stock) {
-    const more = document.querySelector('.more');
-    const less = document.querySelector('.less');
+    const more = document.querySelector('.form-overlay .more');
+    const less = document.querySelector('.form-overlay .less');
     const productsQuantity = form.productsQuantity;
     more.onclick = function () {
         if (productsQuantity.value >= stock) return;
@@ -85,5 +85,6 @@ function moreLessButtons(value, stock) {
         if (productsQuantity.value <= 0) return;
         productsQuantity.value = Number(productsQuantity.value) - 1;
         changingHTMLValues(value, stock);
+        if (productsQuantity.value < 1) overlay.close('form');
     };
 }
