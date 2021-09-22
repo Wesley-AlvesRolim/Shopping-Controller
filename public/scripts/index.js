@@ -7,6 +7,8 @@ import { initCards } from './cart';
 import { listeningEventsToDarkTheme } from './dark-theme';
 
 let obj;
+const closeWindow = [document.querySelector('.form-overlay__form__header img'), document.querySelector('.form-overlay-confirm-delete__form__header img')];
+
 document.querySelector('.header__cart').addEventListener('click', () => {
     overlay.open('cart');
     document.querySelector('.close-window-icon').addEventListener('click', () => {
@@ -19,8 +21,13 @@ document.querySelector('.header__menu').addEventListener('click', () => {
     overlay.openClose();
 });
 
-document.querySelector('.form-overlay__form__header img').addEventListener('click', e => {
+
+closeWindow[0].addEventListener('click', () => {
     overlay.close('form');
+});
+
+closeWindow[1].addEventListener('click', () => {
+    overlay.close('formConfirmDelete');
 });
 
 (function loadCards() {
