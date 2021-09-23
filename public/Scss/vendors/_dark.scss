@@ -55,7 +55,8 @@ body.dark {
         }
     }
 
-    .form-overlay {
+    .form-overlay,
+    .form-overlay-confirm-delete {
         &__form {
             &__header {
                 img {

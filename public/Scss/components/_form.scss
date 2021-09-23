@@ -1,4 +1,5 @@
-.form-overlay {
+.form-overlay,
+.form-overlay-confirm-delete {
     width: 100vw;
     height: 100vh;
     background-color: var(--overlay-color);
@@ -32,7 +33,7 @@
         -ms-border-radius: 1rem;
         -o-border-radius: 1rem;
         &__header {
-            width: 100%;
+            width: 102%;
             display: flex;
             justify-content: space-between;
             align-items: center;
