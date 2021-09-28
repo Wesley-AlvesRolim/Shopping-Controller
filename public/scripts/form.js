@@ -4,6 +4,7 @@ import { overlay } from './overlay';
 import { decreaseStock } from './utils';
 
 export const form = {
+    form: document.querySelector('.form-overlay__form'),
     productsQuantity: document.getElementById('productsQuantity'),
 
     catchValues() {
@@ -29,9 +30,9 @@ export const form = {
         let [productAlreadyExist, indexInCart] = [false, -1];
         cartArray.forEach(({ productName }, index) => {
             if (productName === values.productName) {
-                productAlreadyExist = true
+                productAlreadyExist = true;
                 indexInCart = index;
-            };
+            }
         });
 
         if (productAlreadyExist) {
@@ -39,7 +40,7 @@ export const form = {
             productBought.productsQuantity += values.productsQuantity;
             return;
         }
-        cartArray.push(values)
+        cartArray.push(values);
     },
 
     submit(obj) {
@@ -52,14 +53,14 @@ export const form = {
             overlay.close('form');
             decreaseStock(obj, values.productsQuantity);
         } catch (error) {
-            console.log(error)
+            console.error(error);
             const screenHeight = window.screen.height;
             const scrollY = window.scrollY;
 
             this.productsQuantity.style.boxShadow = '0 0 6px #ee2828';
             setTimeout(() => {
                 const div = document.body.appendChild(document.createElement('div'));
-                div.appendChild(document.createElement('div')).innerHTML = 'Por favor insira valores válidos nos campos';
+                div.appendChild(document.createElement('div')).innerHTML = 'Por favor insira valores válidos no campo';
                 div.className = 'errorMenssage';
                 div.style.top = ((screenHeight * 0.25) + scrollY) + 'px';
                 setTimeout(() => { div.classList.add('on'); }, 100);
