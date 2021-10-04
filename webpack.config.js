@@ -8,8 +8,9 @@ module.exports = {
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: path.join(__dirname),
+        contentBase: path.join(__dirname, 'public'),
         compress: true,
         port: 3000
-    }
+    },
+    devtool: 'source-map'
 };
