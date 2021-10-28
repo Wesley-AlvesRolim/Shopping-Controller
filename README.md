@@ -27,12 +27,6 @@
 ## Installation
 
 - Important: You must have installed the Node.js and Git. 
-- If you have some problem with node-sass after run scripts, you can fix with:
-```bash
-$ npm uninstall node-sass
-$ npm install node-sass
-```
-
 
 ```bash
 # clone it
@@ -49,7 +43,10 @@ $ npm run build:sass
 $ npm start
 ```
 - And enter in your browser using http://localhost:3000
-
+- If you have a problem with node-sass after running scripts, you can fix it with:
+```bash
+$ npm install node-sass@latest
+```
 
 ## 🚀 Technologies
 
