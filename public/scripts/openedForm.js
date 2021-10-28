@@ -34,7 +34,7 @@ function createImg(productName) {
     divImage.appendChild(img);
 
     img.className = 'img';
-    img.src = '/public/images/' + productName + '.jpg';
+    img.src = './images/' + productName + '.jpg';
 }
 
 function focus(value, stock) {

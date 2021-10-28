@@ -66,7 +66,7 @@ function innerHtml(index) {
                     </g>
                 </svg>
             </a>
-            <img src="./public/images/${productName}.jpg" alt="${productName}">
+            <img src="./images/${productName}.jpg" alt="${productName}">
             <p>${productName}</p>
             <p>${productsQuantity} ${checkName} por ${utils.formatPrice(value * productsQuantity,)}</p>`;
     return content;

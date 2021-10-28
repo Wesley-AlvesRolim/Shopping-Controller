@@ -36,7 +36,7 @@ export const cards = {
 function innerHtml(index) {
     const { productName, value } = index;
     const content = `
-        <img src="./public/images/${productName}.jpg" alt="${productName}">
+        <img src="./images/${productName}.jpg" alt="${productName}">
         <p>${productName}</p>
         <p>${utils.formatPrice(value)}</p>`;
     return content;
