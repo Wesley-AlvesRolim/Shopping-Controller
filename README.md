@@ -26,7 +26,13 @@
 
 ## Installation
 
-- Important: You must have installed the Node.js and Git
+- Important: You must have installed the Node.js and Git. 
+- If you have some problem with node-sass after run scripts, you can fix with:
+```bash
+$ npm uninstall node-sass
+$ npm install node-sass
+```
+
 
 ```bash
 # clone it
