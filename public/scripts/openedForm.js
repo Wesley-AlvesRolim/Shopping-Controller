@@ -19,10 +19,11 @@ export function openedForm(obj) {
     setDefaultValue(value, stock);
 }
 
-function showStockNumber(stock) {
-    const input = document.querySelector('input[type="number"]');
+export function showStockNumber(stock, htmlId = '') {
+    const input = document.querySelector('input[type="number"]' + htmlId);
     let p = document.querySelector('.stock');
     if (!p) p = document.createElement('p');
+
     p.className = 'stock';
     p.innerText = 'Estoque: ' + stock;
     input.parentElement.insertAdjacentElement('afterend', p);
