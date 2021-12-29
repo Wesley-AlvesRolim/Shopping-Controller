@@ -46,11 +46,6 @@ export const products = [{
         stock: stock(1, 200),
     },
     {
-        value: 2922.99,
-        productName: 'Playstation 4 + 3 Games',
-        stock: stock(1, 200),
-    },
-    {
         value: 10377.93,
         productName: 'Smart TV OLED 65\'\' LG',
         stock: stock(1, 200),
