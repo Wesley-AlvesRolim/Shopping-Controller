@@ -60,6 +60,9 @@ function listeningDelete() {
 
 function openedFormToConfirmDelete(productName, stock, value, productsQuantity) {
     overlay.open('formConfirmDelete');
+    createImg(productName, '-confirm-delete');
+}
+
 
 }
 
