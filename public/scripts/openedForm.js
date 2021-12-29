@@ -28,9 +28,10 @@ function showStockNumber(stock) {
     input.parentElement.insertAdjacentElement('afterend', p);
 }
 
-function createImg(productName) {
-    const divImage = document.querySelector('.form-overlay__form__img');
+export function createImg(productName, classToHtml = '') {
+    const divImage = document.querySelector('.form-overlay' + classToHtml + '__form__img');
     const img = document.createElement('img');
+    divImage.innerHTML = '';
     divImage.appendChild(img);
 
     img.className = 'img';
