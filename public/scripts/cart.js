@@ -1,5 +1,6 @@
 import { cards } from './cards';
 import { products } from './data';
+import { overlay } from './overlay';
 import { utils, increaseStock } from './utils';
 
 export const cartArray = [];
@@ -47,11 +48,19 @@ function listeningDelete() {
             const productNameInCart = productInCart.productName;
 
             products.forEach((product, index) => {
-                if (product.productName === productNameInCart) increaseStock(productInCart, index);
+                if (product.productName === productNameInCart) {
+                    openedFormToConfirmDelete(product.productName, product.stock, product.value, productInCart.productsQuantity);
+                    increaseStock(productInCart, index);
+                }
             });
-            cards.deleteOne(index);
+            // cards.deleteOne(index);
         });
     });
+}
+
+function openedFormToConfirmDelete(productName, stock, value, productsQuantity) {
+    overlay.open('formConfirmDelete');
+
 }
 
 function innerHtml(index) {
