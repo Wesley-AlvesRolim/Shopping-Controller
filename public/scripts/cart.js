@@ -1,5 +1,5 @@
 import { cards } from './cards';
-import { createImg, showStockNumber } from './openedForm';
+import { createImg, showStockNumber, moreLessButtons, setDefaultValue } from './openedForm';
 import { products } from './data';
 import { overlay } from './overlay';
 import { utils, increaseStock } from './utils';
@@ -62,7 +62,9 @@ function listeningDelete() {
 function openedFormToConfirmDelete(productName, stock, value, productsQuantity) {
     overlay.open('formConfirmDelete');
     createImg(productName, '-confirm-delete');
-    showStockNumber(stock,'#productsQuantityToRemove');
+    showStockNumber(stock, '#productsQuantityToRemove');
+    moreLessButtons(value, stock, '-confirm-delete', '#productsQuantityToRemove', productsQuantity);
+    setDefaultValue(value, stock, '#productsQuantityToRemove', productsQuantity);
 }
 
 

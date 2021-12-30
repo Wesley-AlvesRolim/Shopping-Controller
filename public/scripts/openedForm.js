@@ -69,25 +69,28 @@ function changingHTMLValues(value, stock) {
     stockElement.innerHTML = 'Estoque: ' + stockQuantity;
 }
 
-function setDefaultValue(value, stock) {
-    const productsQuantity = form.productsQuantity;
+export function setDefaultValue(value, stock, htmlId = 'nothingHere', productsQuantityInCart) {
+    const htmlClass = htmlId !== 'nothingHere' ? '-confirm-delete' : '';
+    const productsQuantity = document.querySelector(htmlId) || form.productsQuantity;
     productsQuantity.value = 1;
-    changingHTMLValues(value, stock);
+    changingHTMLValues(value, stock, htmlClass, productsQuantityInCart);
 }
 
-function moreLessButtons(value, stock) {
-    const more = document.querySelector('.form-overlay .more');
-    const less = document.querySelector('.form-overlay .less');
-    const productsQuantity = form.productsQuantity;
+export function moreLessButtons(value, stock, classToHtml = '', htmlId = 'nothingHere', productsQuantityInCart) {
+    const more = document.querySelector('.form-overlay' + classToHtml + ' .more');
+    const less = document.querySelector('.form-overlay' + classToHtml + ' .less');
+    const productsQuantity = document.querySelector(htmlId) || form.productsQuantity;
+
     more.onclick = function () {
-        if (productsQuantity.value >= stock) return;
+        const conditional = classToHtml === '' ? Number(productsQuantity.value) >= stock : productsQuantity.value >= productsQuantityInCart;
+        if (conditional) return;
         productsQuantity.value = Number(productsQuantity.value) + 1;
-        changingHTMLValues(value, stock);
+        changingHTMLValues(value, stock, classToHtml, productsQuantityInCart);
     };
     less.onclick = function () {
-        if (productsQuantity.value <= 0) return;
+        if (Number(productsQuantity.value) <= 0) return;
         productsQuantity.value = Number(productsQuantity.value) - 1;
-        changingHTMLValues(value, stock);
-        if (productsQuantity.value < 1) overlay.close('form');
+        changingHTMLValues(value, stock, classToHtml, productsQuantityInCart);
+        if (productsQuantity.value < 1) overlay.close(classToHtml !== '' ? 'formConfirmDelete' :'form');
     };
 }
