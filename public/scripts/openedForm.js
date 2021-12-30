@@ -40,7 +40,7 @@ export function createImg(productName, classToHtml = '') {
 }
 
 function focus(value, stock) {
-    document.querySelector('input[type="number"]').addEventListener('focus', () => {
+    document.querySelector('.form-overlay__form input[type="number"]').addEventListener('focus', () => {
         form.productsQuantity.oninput = function () {
             if (form.catchValues().productsQuantity >= stock) Number(form.productsQuantity.value = stock);
             changingHTMLValues(value, stock);
