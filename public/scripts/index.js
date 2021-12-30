@@ -44,7 +44,7 @@ closeWindow[1].addEventListener('click', () => {
 
 listeningEventsToDarkTheme();
 
-document.querySelector('form').addEventListener('submit', e => {
+document.querySelector('.form-overlay__form').addEventListener('submit', e => {
     e.preventDefault();
     form.submit(obj);
 });
