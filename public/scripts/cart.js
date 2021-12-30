@@ -1,5 +1,5 @@
 import { cards } from './cards';
-import { createImg, showStockNumber, moreLessButtons, setDefaultValue } from './openedForm';
+import { createImg, showStockNumber, moreLessButtons, setDefaultValue, changingHTMLValues } from './openedForm';
 import { products } from './data';
 import { overlay } from './overlay';
 import { utils, increaseStock } from './utils';
@@ -65,11 +65,20 @@ function openedFormToConfirmDelete(productName, stock, value, productsQuantity) 
     overlay.open('formConfirmDelete');
     createImg(productName, '-confirm-delete');
     showStockNumber(stock, '#productsQuantityToRemove');
+    focus(value, stock, productsQuantity);
     moreLessButtons(value, stock, '-confirm-delete', '#productsQuantityToRemove', productsQuantity);
     setDefaultValue(value, stock, '#productsQuantityToRemove', productsQuantity);
 }
 
-
+function focus(value, stock, productsQuantityInCart) {
+    const form = overlay.formConfirmDelete.querySelector('form');
+    form.querySelector('input[type="number"]').addEventListener('focus', e => {
+        const input = e.target;
+        input.oninput = function () {
+            if (Number(input.value) >= productsQuantityInCart) input.value = productsQuantityInCart;
+            changingHTMLValues(value, stock, '-confirm-delete',  productsQuantityInCart);
+        };
+    });
 }
 
 function innerHtml(index) {
