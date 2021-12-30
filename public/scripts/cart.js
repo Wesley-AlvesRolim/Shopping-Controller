@@ -3,6 +3,7 @@ import { createImg, showStockNumber, moreLessButtons, setDefaultValue, changingH
 import { products } from './data';
 import { overlay } from './overlay';
 import { utils, increaseStock } from './utils';
+import { calculator } from './calculator';
 
 export const cartArray = [];
 export function initCards() {
@@ -53,7 +54,6 @@ function listeningDelete() {
                 if (product.productName === productNameInCart) {
                     productIndex = index;
                     openedFormToConfirmDelete(product.productName, product.stock, product.value, productInCart.productsQuantity);
-                    increaseStock(productInCart, index);
                 }
             });
             overlay.formConfirmDelete.querySelector('form').onsubmit = submit(index, productIndex);
@@ -79,6 +79,26 @@ function focus(value, stock, productsQuantityInCart) {
             changingHTMLValues(value, stock, '-confirm-delete',  productsQuantityInCart);
         };
     });
+}
+
+function submit(index, productIndex) {
+    const productInCart = { ...cartArray[index] };
+    return (e) => {
+        e.preventDefault();
+        let { value: quantity } = document.querySelector('#productsQuantityToRemove');
+        quantity = Number(quantity);
+
+        cartArray[index] = {...cartArray[index], productsQuantity: productInCart.productsQuantity - quantity} ;
+        if (quantity === productInCart.productsQuantity) cards.deleteOne(index);
+        else {
+            calculator.updateBalance();
+            initCards();
+        }
+
+        productInCart.productsQuantity = quantity;
+        increaseStock(productInCart, productIndex);
+        overlay.close('formConfirmDelete');
+    };
 }
 
 function innerHtml(index) {
