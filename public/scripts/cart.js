@@ -45,16 +45,18 @@ function messageInCartContent(cart) {
 function listeningDelete() {
     document.querySelectorAll('.delete').forEach((element, index) => {
         element.addEventListener('click', () => {
+            let productIndex;
             const productInCart = cartArray[index];
             const productNameInCart = productInCart.productName;
 
             products.forEach((product, index) => {
                 if (product.productName === productNameInCart) {
+                    productIndex = index;
                     openedFormToConfirmDelete(product.productName, product.stock, product.value, productInCart.productsQuantity);
                     increaseStock(productInCart, index);
                 }
             });
-            // cards.deleteOne(index);
+            overlay.formConfirmDelete.querySelector('form').onsubmit = submit(index, productIndex);
         });
     });
 }
