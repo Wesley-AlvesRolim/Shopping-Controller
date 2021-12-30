@@ -18,6 +18,7 @@
     align-items: center;
     text-align: center;
     box-shadow: 0 2px 1px var(--shadow);
+    user-select: none;
     transition: 0.5s;
     animation: 1s ease-in-out backwards showCards;
     animation-delay: var(--x);
