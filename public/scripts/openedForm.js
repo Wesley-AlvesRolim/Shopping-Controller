@@ -48,24 +48,31 @@ function focus(value, stock) {
     });
 }
 
-function changingHTMLValues(value, stock) {
-    const cost = document.querySelector('.form-overlay__form__calculation__cost');
-    const quantity = document.querySelector('.form-overlay__form__calculation__quantity');
-    const stockElement = document.querySelector('.stock');
-    const { productsQuantity } = form.catchValues();
+export function changingHTMLValues(value, stock, classToHtml = '', productsQuantityInCart) {
+    const cost = document.querySelector('.form-overlay' + classToHtml + '__form__calculation__cost');
+    const quantity = document.querySelector('.form-overlay' + classToHtml + '__form__calculation__quantity');
+    const stockElement = document.querySelector('.form-overlay' + classToHtml + '__form .stock');
+
+    let { productsQuantity } = form.catchValues();
+    productsQuantity = classToHtml === '' ? productsQuantity : Number(document.querySelector('#productsQuantityToRemove').value);
 
     const checkName = productsQuantity > 1 ? ' Unidades' : ' Unidade';
     const costValue = value * productsQuantity;
-    const stockQuantity = stock - productsQuantity;
+    const stockQuantity = classToHtml === '' ? stock - productsQuantity : stock + productsQuantity;
 
     if (productsQuantity <= 0) {
-        cost.innerHTML = 'Custo: ' + utils.formatPrice(costValue);
-        quantity.innerHTML = 0 + checkName;
+        if (cost && quantity) {
+            cost.innerHTML = 'Custo: ' + utils.formatPrice(costValue);
+            quantity.innerHTML = 0 + checkName;
+        }
         stockElement.innerHTML = 'Estoque: ' + stock;
         return;
     }
-    cost.innerHTML = 'Custo: ' + utils.formatPrice(costValue);
-    quantity.innerHTML = productsQuantity + checkName;
+    if(productsQuantity > productsQuantityInCart) return;
+    if (cost && quantity) {
+        cost.innerHTML = 'Custo: ' + utils.formatPrice(costValue);
+        quantity.innerHTML = productsQuantity + checkName;
+    }
     stockElement.innerHTML = 'Estoque: ' + stockQuantity;
 }
 
