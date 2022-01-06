@@ -58,7 +58,8 @@ export function changingHTMLValues(value, stock, classToHtml = '', productsQuant
 
     const checkName = productsQuantity > 1 ? ' Unidades' : ' Unidade';
     const costValue = value * productsQuantity;
-    const stockQuantity = classToHtml === '' ? stock - productsQuantity : stock + productsQuantity;
+    const stockQuantity = classToHtml === '' ? stock - productsQuantity : productsQuantityInCart - productsQuantity;
+    const stockText = classToHtml === '' ? 'Estoque: ' : 'Sobrará: ';
 
     if (productsQuantity <= 0) {
         if (cost && quantity) {
@@ -73,7 +74,7 @@ export function changingHTMLValues(value, stock, classToHtml = '', productsQuant
         cost.innerHTML = 'Custo: ' + utils.formatPrice(costValue);
         quantity.innerHTML = productsQuantity + checkName;
     }
-    stockElement.innerHTML = 'Estoque: ' + stockQuantity;
+    stockElement.innerHTML =  stockText + stockQuantity;
 }
 
 export function setDefaultValue(value, stock, htmlId = 'nothingHere', productsQuantityInCart) {
