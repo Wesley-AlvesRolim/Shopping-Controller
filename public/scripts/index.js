@@ -10,41 +10,45 @@ let obj;
 const closeWindow = [document.querySelector('.form-overlay__form__header img'), document.querySelector('.form-overlay-confirm-delete__form__header img')];
 
 document.querySelector('.header__cart').addEventListener('click', () => {
-    overlay.open('cart');
-    document.querySelector('.close-window-icon').addEventListener('click', () => {
-        overlay.close('cart');
-    });
-    initCards();
+  overlay.open('cart');
+  document.querySelector('.close-window-icon').addEventListener('click', () => {
+    overlay.close('cart');
+  });
+  initCards();
 });
 
 document.querySelector('.header__menu').addEventListener('click', () => {
-    overlay.openClose();
+  overlay.openClose();
+});
+
+document.querySelector('.overlay-side-bar').addEventListener('click', (e) => {
+  if (e.target.classList.contains('overlay-side-bar')) overlay.openClose();
 });
 
 
 closeWindow[0].addEventListener('click', () => {
-    overlay.close('form');
+  overlay.close('form');
 });
 
 closeWindow[1].addEventListener('click', () => {
-    overlay.close('formConfirmDelete');
+  overlay.close('formConfirmDelete');
 });
 
 (function loadCards() {
-    document.querySelector('.section-cards').innerHTML = '';
-    products.forEach((element, index) => { cards.createDiv(element, index); });
+  document.querySelector('.section-cards').innerHTML = '';
+  products.forEach((element, index) => { cards.createDiv(element, index); });
 
-    document.querySelectorAll('.card').forEach((element, index) => {
-        element.addEventListener('click', () => {
-            obj = products[index];
-            openedForm(obj);
-        });
+  document.querySelectorAll('.card').forEach((element, index) => {
+    element.addEventListener('click', () => {
+      obj = products[index];
+      openedForm(obj);
     });
+  });
 })();
 
 listeningEventsToDarkTheme();
 
 document.querySelector('.form-overlay__form').addEventListener('submit', e => {
-    e.preventDefault();
-    form.submit(obj);
+  e.preventDefault();
+  form.submit(obj);
 });
